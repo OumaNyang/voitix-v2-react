@@ -1,15 +1,14 @@
 import React from 'react';
 import { Container ,Row,Col} from 'react-bootstrap';
-import heroImage from '../assets/images/voitix-bg.png';  
-
-const Hero = () => {
+// import heroImage from '../assets/images/istock-1371324023-2520w.jpg';  
+ const Hero = () => {
   return (
     <>
       <section id="hero" className="hero d-flex align-items-center">
         <Container >
           <Row className="gy-4 d-flex justify-content-between">
-            <Col className="order-2 order-lg-2 d-flex flex-column justify-content-center">
-              <h2 className="h6" data-aos="fade-up">
+            <Col lg={5} className="order-2 order-lg-1 d-flex flex-column justify-content-center">
+              <h2 className="" data-aos="fade-up">
                 Automate Your Entire Purchasing Process with
                 <span> Invoicing Software</span> that Streamlines Your Processes
               </h2>
@@ -19,8 +18,8 @@ const Hero = () => {
               </p>
               </Col>
 
-         <Col lg={5} className="order-1 order-lg-1 hero-img" data-aos="zoom-out">
-            <img src={heroImage} className="img-fluid mb-3 mb-lg-0" alt="Illustration" />
+         <Col lg={5} className="order-1 order-lg-2 hero-img" data-aos="zoom-out">
+            {/* <img src={heroImage} className="img-fluid mb-3 mb-lg-0" alt="Illustration" /> */}
              </Col>
 
 

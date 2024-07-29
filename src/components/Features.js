@@ -6,7 +6,7 @@ const Features = () => {
     <section id="features" className="features">
       <Container data-aos="fade-up">
         <div className="section-header">
-          <span>Features</span>
+          {/* <span>Features</span> */}
           <h2>Features</h2>
         </div>
         <Row>

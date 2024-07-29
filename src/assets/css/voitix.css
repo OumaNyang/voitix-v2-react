@@ -86,26 +86,107 @@ h6 {
   z-index: 9999;
 }
 
+
+/*--------------------------------------------------------------
+# Sections & Section Header
+--------------------------------------------------------------*/
+section {
+  padding: 10px 0;
+  overflow: hidden;
+}
+
+.section-header {
+  text-align: center;
+  padding: 20px 0;
+  position: relative;
+}
+
+.section-header h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  padding-bottom: 0;
+  color: #ff0d0e;
+  position: relative;
+  z-index: 2;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.section-header h2:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: var(--color-primary);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.section-header span {
+  position: absolute;
+  top: 46px;
+  color: rgba(14, 29, 52, 0.06);
+  left: 0;
+  right: 0;
+  z-index: 1;
+  font-weight: 700;
+  font-size: 3rem;
+  text-transform: uppercase;
+  line-height: 0;
+}
+
+.section-header p {
+  margin-bottom: 0;
+  position: relative;
+  z-index: 2;
+}
+.header.fixed-top {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .header .navbar-brand img {
+    height: 50px;
+  }
+
+@media (max-width: 640px) {
+  .section-header h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+
+  .section-header span {
+    font-size: 38px;
+  }
+}
+
+ 
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
 .hero {
-    width: 100%;
-    min-height: 50vh;
-    background-color: var(--color-secondary) !important;
-    background-image: url("../images/hero-bg.png");
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    padding: 120px 0 60px 0;
-    color: rgba(255, 255, 255, 0.8);
-    font-family: var(--font-default);
-  }
-  
+  width: 100%;
+  min-height: 95vh;
+  background: linear-gradient(to right, rgb(52, 51, 51), rgba(255, 255, 255, 0.112)), 
+              url("../images/istock-1371324023-2520w.jpg") center center;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  padding: 10px 0 60px 0;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: var(--font-default);
+}
+
   .hero h2 {
     margin-bottom: 20px;
     padding: 0;
-    font-size: 45px;
+    font-size: 38px;
     font-weight: 700;
     color: #fff;
   }
@@ -159,12 +240,7 @@ h6 {
     font-size: 15px;
     font-weight: 600;
   }
-
-  /* .hero .img-fluid {
-     border: 2px solid red;
-    width: 100vw;
-  } */
-  
+ 
 /*--------------------------------------------------------------
 # Featured Services Section
 --------------------------------------------------------------*/

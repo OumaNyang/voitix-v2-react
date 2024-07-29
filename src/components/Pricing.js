@@ -65,7 +65,7 @@ const Pricing = () => {
     <section id="pricing" className="pricing pt-0">
       <Container data-aos="fade-up">
         <div className="section-header">
-          <span>Pricing</span>
+          {/* <span>Pricing</span> */}
           <h2>Pricing</h2>
         </div>
         <Row className="gy-4">
