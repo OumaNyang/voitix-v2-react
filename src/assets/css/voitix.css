@@ -240,81 +240,86 @@ section {
     font-size: 15px;
     font-weight: 600;
   }
- 
-/*--------------------------------------------------------------
+ /*--------------------------------------------------------------
 # Featured Services Section
 --------------------------------------------------------------*/
-.featured-services {  
-    max-width: 90%;
-    margin: auto;
-    margin-top: 15px;
-    border-radius: 0px;
-    box-shadow: 0 0  5px rgba(45, 44, 44, 0.3);  
-     padding: .7rem;
-     font-family:var(--font-primary) ;
-     }  
-    
-    
-    .featured-services .service-item {
-      position: relative;
-      height: 100%;
-      margin-bottom: 20px;
-      }
-    
-    .featured-services .service-item .icon {
-      margin-right: 20px;
-    }
-    
-    .featured-services .service-item .icon i {
-      color: #ff0d0d;
-      font-size: 48px;
-      transition: 0.3s;
-    }
-    
-    .featured-services .service-item:hover .icon {
-      background: inherit;
-    }
-    
-    .featured-services .service-item:hover .icon i {
-      color: var(--color-primary);
-    }
-    
-    .featured-services .service-item .title {
-      font-weight: 700;
-      margin-bottom: 10px;
-      font-size: 20px;
-      color: var(--color-secondary);
-      transition: 0.3s;
-    }
-    
-    .featured-services .service-item .description {
-      font-size: 15px;
-      color: #132848;
-      margin-bottom: 10px;
-    }
-    
-    .featured-services .service-item .readmore {
-      display: flex;
-      align-items: center;
-      color: var(--color-secondary);
-      transition: 0.3s;
-      font-weight: 700;
-      font-size: 14px;
-    }
-    
-    .featured-services .service-item .readmore i {
-      margin-left: 8px;
-    }
-    
-    .featured-services .service-item:hover .title,
-    .featured-services .service-item:hover .readmore,
-    .featured-services .service-item:hover .icon i {
-      color: var(--color-primary);
-    }
-    
+.featured-services {
+  max-width: 100%;
+  margin: auto;
+  border-radius: 0;
+  box-shadow: 0 0 5px rgba(45, 44, 44, 0.3);
+  padding: 0.7rem;
+  font-family: var(--font-primary);
+  background-color: #132848;
+  justify-content: space-between;
+}
 
+.featured-services .service-item {
+  position: relative;
+  height: 100%;
+  margin: 5px;
+  background-color: #efd0d0;
+  border-radius: 10px;
+  padding: 20px;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+}
 
+.featured-services .service-item:hover {
+  background-color: #fff;
+  transform: translateY(-10px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
 
+.featured-services .icon img {
+  font-size: 48px;
+  width: 90px;
+  height: 90px;
+  background-color: #fff;
+  border-radius: 50%;
+  padding: 10px;
+  border: 5px solid var(--color-white);
+  transition: border 0.3s ease, transform 0.3s ease;
+}
+
+.featured-services .service-item:hover .icon img {
+  transform: scale(1.1);
+  border: 5px solid var(--color-accent);
+}
+
+.featured-services .service-title {
+  font-weight: 700;
+  margin: 15px 0px;
+  font-size: 20px;
+  color: var(--color-secondary);
+  transition: color 0.3s ease;
+}
+
+.featured-services .service-item:hover .service-title {
+  color: var(--color-primary);
+}
+
+.featured-services .service-description {
+  font-size: 15px;
+  color: #132848;
+  margin-bottom: 10px;
+}
+
+@media (min-width: 768px) {
+  .featured-services .service-item {
+    height: 300px; /* Uniform height for all cards */
+  }
+}
+
+@media (max-width: 767px) {
+  .featured-services .service-item {
+    margin-bottom: 20px;
+  }
+}
 
 /*----------------------
 Features Section

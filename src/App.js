@@ -3,7 +3,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Header from './components/Header';
 import Hero from './components/Hero';
-import Features from './components/Features';
+// import Features from './components/Features';
 import CallToAction from './components/CallToAction';
 import WhyVoitix from './components/WhyVoitix';
 import './App.css'; // You can add custom styles here
@@ -25,7 +25,7 @@ function App() {
     <div className="App">
       <Header />
       <Hero />
-      <Features />
+      {/* <Features /> */}
       <CallToAction />
        <WhyVoitix />
        <Pricing />
