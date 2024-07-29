@@ -1,12 +1,11 @@
 /**
-* Template Name: Voitix 
+* Template Name: Voitix Styles
 * Updated: July 29 2024 with Bootstrap v5.3.2
- * Author: oumanyang.com
+* Author: oumanyang.com @@OumaNyang
 * License: https://oumanyang.com/license/
 */
 
 /* Fonts */
-
 @font-face {
   font-family: "Roboto";
   src: url("./fonts/Roboto/Roboto-Regular.ttf") format("truetype"),
@@ -22,7 +21,6 @@
   font-style: normal;
 }
  
-
 @font-face {
   font-family: "Metropolis";
   src: url("./fonts/Metropolis/Metropolis-Regular.otf") format("opentype");
@@ -592,12 +590,12 @@ Features Section
   color: var(--color-default);
   text-align: left;
   background: rgba(84, 83, 83, 0.1);
-  border-radius: 25px !important;
+  border-radius: 8px !important;
 }
 
 .faq .accordion-button:focus {
   box-shadow: none;
-  border-radius: 15px;
+  /* border-radius: 15px; */
 }
 
 .faq .accordion-button:not(.collapsed) {
