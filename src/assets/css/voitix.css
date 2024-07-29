@@ -1,0 +1,336 @@
+/**
+* Template Name: Voitix 
+* Updated: July 29 2024 with Bootstrap v5.3.2
+ * Author: oumanyang.com
+* License: https://oumanyang.com/license/
+*/
+
+ /* Fonts */
+
+@font-face {
+  font-family: "Roboto";
+  src: url("./Lato-Roboto/Roboto/Roboto-Regular.ttf") format("truetype"),
+    url("./Lato-Roboto/Roboto/Roboto-Black.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Lato";
+  src: url("./Lato-Roboto/Lato/Lato-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Metropolis";
+  src: url("./Metropolis/Metropolis-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+:root {
+  --font-default: "Metropolis", sans-serif;
+  --font-primary: "Metropolis", sans-serif;
+  --font-secondary: "Lato", sans-serif;
+  font-size: 1.1em;
+
+  /* Colors */
+  --color-default: #1d1d1d;
+  --color-primary: #ff0d0d;
+  --color-secondary:  #3d3d3d;
+  --color-accent:  #0f2e8a;
+  --color-white:  #ffffff;
+
+  /* Smooth scroll behavior */
+  scroll-behavior: smooth;
+}
+
+/*--------------------------------------------------------------
+  # General
+  --------------------------------------------------------------*/
+body {
+  font-family: var(--font-default);
+  color: var(--color-default);
+ 
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ff0d0d;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-primary);
+}
+
+.alert {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: red;
+  color: white;
+  border-radius: 5px;
+  z-index: 9999;
+}
+
+  
+/*----------------------
+Features Section
+--------------------------------------------------------------*/
+.features .content h3 {
+  font-weight: 700;
+  font-size: 32px;
+  font-family: var(--font-secondary);
+  color: var(--color-accent);
+}
+
+.features .content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.features .content ul li {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 40px;
+}
+
+.features .content ul i {
+  flex-shrink: 0;
+  font-size: 48px;
+  color: var(--color-primary);
+  margin-right: 20px;
+  line-height: 0;
+}
+
+.features .content ul h5 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+.features .content ul p {
+  font-size: 15px;
+}
+
+.features .content p:last-child {
+  margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+# Call To Action Section
+--------------------------------------------------------------*/
+.cta {
+    background: linear-gradient(rgba(52, 14, 14, 0.9), rgba(52, 14, 14, 0.8)), url("../images/Blog_Fourth-Image-RFQ.png") center center;
+    background-size: cover;
+    padding: 100px 0;
+    font-family: var(--font-primary);
+
+  }
+  
+  @media (min-width: 1365px) {
+    .cta {
+      background-attachment: fixed;
+    }
+  }
+  
+  .cta h3 {
+    color:var(--color-white);
+    font-size: 28px;
+    font-weight: 700;
+  }
+  
+  .cta p {
+    color:var(--color-white);
+  }
+  
+  .cta .cta-btn {
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 12px 40px;
+    border-radius: 5px;
+    transition: 0.5s;
+    margin: 10px;
+    border: 2px solid  var(--color-white);
+    color:var(--color-white);
+    background-color:transparent; ;
+  }
+  
+  .cta .cta-btn:hover {
+    background: var(--color-primary);
+    border: 2px solid var(--color-primary);
+  }
+  
+
+/*--------------------------------------------------------------
+# Why Voitix  Section
+--------------------------------------------------------------*/
+.why-voitix {
+    padding-top: 60px;
+  }
+  
+  .why-voitix .why-voitix-item+.why-voitix-item {
+    margin-top: 80px;
+  }
+  
+  @media (max-width: 640px) {
+    .why-voitix .why-voitix-item+.why-voitix-item {
+      margin-top: 40px;
+    }
+  }
+  
+  .why-voitix .why-voitix-item h3 {
+    font-weight: 600;
+    font-size: 26px;
+    color: #ff0d0e;
+  }
+  
+  .why-voitix .why-voitix-item ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .why-voitix .why-voitix-item ul li {
+    padding-bottom: 10px;
+  }
+  
+  .why-voitix .why-voitix-item ul li:last-child {
+    padding-bottom: 0;
+  }
+  
+  .why-voitix .why-voitix-item ul i {
+    font-size: 20px;
+    padding-right: 4px;
+    color: var(--color-primary);
+  }
+  
+  .why-voitix .why-voitix-item p:last-child {
+    margin-bottom: 0;
+  }
+  
+
+/*--------------------------------------------------------------
+# Pricing Section
+--------------------------------------------------------------*/
+.pricing .pricing-item {
+    padding: 20px 15px;
+    box-shadow: 0 3px 20px -2px rgba(108, 117, 125, 0.15);
+    background: var(--color-white);
+    height: 100%;
+    border-top: 4px solid var(--color-white);
+    border-radius: 5px;
+    font-family: var(--font-primary);
+
+  }
+  
+  .pricing h3 {
+    font-weight: 600;
+    margin-bottom: 1.1em;
+    font-size: 1.2em;
+    color: var(--color-default);
+  
+  }
+  
+  .pricing h4 {
+    font-size: 1.9em;
+    color: var(--color-primary);
+    font-weight: 400;
+    font-family: var(--font-primary);
+    /* margin-bottom:.9em; */
+    
+  }
+  
+  .pricing h4 sup {
+    font-size: 1rem;
+  }
+  
+  .pricing h4 span {
+    color: rgba(108, 117, 125, 0.8);
+    font-size: .9rem;
+  }
+  
+  .pricing ul {
+    padding: 1em 0;
+    list-style: none;
+    color: var(--color-secondary);
+    text-align: left;
+   
+  }
+  
+  .pricing ul li {
+    padding: .1rem 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  .pricing ul i {
+    color: var(--color-accent);
+    font-size: 24px;
+    padding-right: 5px;
+  }
+ 
+  
+  .pricing .buy-btn {
+    display: inline-block;
+    padding: 5px 20px;
+    border-radius: 50px;
+    color: var(--color-primary);
+    transition: none;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: var(--font-primary);
+    transition: 0.3s;
+    border: 1px solid var(--color-primary);
+    background-color:var(--color-white) ;
+  }
+  
+  .pricing .buy-btn:hover {
+    background-color: var(--color-primary) ;
+    color:var(--color-white);
+    border: 1px solid var(--color-primary);
+
+   }
+  
+  .pricing .featured {
+    border-top-color: var(--color-primary);
+  }
+  
+  .pricing .featured .buy-btn {
+    background: var(--color-primary);
+    color:var(--color-white);
+  }
+  
+  @media (max-width: 992px) {
+    .pricing .box {
+      max-width: 60%;
+      margin: 0 auto 30px auto;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .pricing .box {
+      max-width: 80%;
+      margin: 0 auto 30px auto;
+    }
+  }
+  
+  @media (max-width: 420px) {
+    .pricing .box {
+      max-width: 100%;
+      margin: 0 auto 30px auto;
+    }
+  }
+  
