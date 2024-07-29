@@ -9,6 +9,8 @@ import WhyVoitix from './components/WhyVoitix';
 import './App.css'; // You can add custom styles here
 import './assets/css/voitix.css'; 
 import Pricing from './components/Pricing';
+import FAQ from './components/FAQ';
+import Footer from './components/Footer';
 function App() {
   useEffect(() => {
     AOS.init({
@@ -27,6 +29,8 @@ function App() {
       <CallToAction />
        <WhyVoitix />
        <Pricing />
+       <FAQ />
+       <Footer />
     </div>
   );
 }
