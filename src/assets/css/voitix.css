@@ -86,6 +86,160 @@ h6 {
   z-index: 9999;
 }
 
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+.hero {
+    width: 100%;
+    min-height: 50vh;
+    background-color: var(--color-secondary) !important;
+    background-image: url("../images/hero-bg.png");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    padding: 120px 0 60px 0;
+    color: rgba(255, 255, 255, 0.8);
+    font-family: var(--font-default);
+  }
+  
+  .hero h2 {
+    margin-bottom: 20px;
+    padding: 0;
+    font-size: 45px;
+    font-weight: 700;
+    color: #fff;
+  }
+  .hero h2 span {
+    color: rgb(209, 73, 46);
+  }
+  
+  @media (max-width: 575px) {
+    .hero h2 {
+      font-size: 25px;
+    }
+  }
+  
+  .hero p {
+    font-size: 18px;
+    font-weight: 400;
+    margin:10px 0px  40px 0px ;
+  }
+  
+   .hero .stats-item {
+    padding: 30px;
+    width: 100%;
+  }
+  
+  .hero .stats-item span {
+    font-size: 32px;
+    display: block;
+    font-weight: 700;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    position: relative;
+  }
+  
+  .hero .stats-item span:after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 20px;
+    height: 3px;
+    background: var(--color-primary);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+  }
+  
+  .hero .stats-item p {
+    padding: 0;
+    margin: 0;
+    font-family: var(--font-primary);
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  /* .hero .img-fluid {
+     border: 2px solid red;
+    width: 100vw;
+  } */
+  
+/*--------------------------------------------------------------
+# Featured Services Section
+--------------------------------------------------------------*/
+.featured-services {  
+    max-width: 90%;
+    margin: auto;
+    margin-top: 15px;
+    border-radius: 0px;
+    box-shadow: 0 0  5px rgba(45, 44, 44, 0.3);  
+     padding: .7rem;
+     font-family:var(--font-primary) ;
+     }  
+    
+    
+    .featured-services .service-item {
+      position: relative;
+      height: 100%;
+      margin-bottom: 20px;
+      }
+    
+    .featured-services .service-item .icon {
+      margin-right: 20px;
+    }
+    
+    .featured-services .service-item .icon i {
+      color: #ff0d0d;
+      font-size: 48px;
+      transition: 0.3s;
+    }
+    
+    .featured-services .service-item:hover .icon {
+      background: inherit;
+    }
+    
+    .featured-services .service-item:hover .icon i {
+      color: var(--color-primary);
+    }
+    
+    .featured-services .service-item .title {
+      font-weight: 700;
+      margin-bottom: 10px;
+      font-size: 20px;
+      color: var(--color-secondary);
+      transition: 0.3s;
+    }
+    
+    .featured-services .service-item .description {
+      font-size: 15px;
+      color: #132848;
+      margin-bottom: 10px;
+    }
+    
+    .featured-services .service-item .readmore {
+      display: flex;
+      align-items: center;
+      color: var(--color-secondary);
+      transition: 0.3s;
+      font-weight: 700;
+      font-size: 14px;
+    }
+    
+    .featured-services .service-item .readmore i {
+      margin-left: 8px;
+    }
+    
+    .featured-services .service-item:hover .title,
+    .featured-services .service-item:hover .readmore,
+    .featured-services .service-item:hover .icon i {
+      color: var(--color-primary);
+    }
+    
+
+
+
+
 /*----------------------
 Features Section
 --------------------------------------------------------------*/
@@ -250,7 +404,6 @@ Features Section
     color: var(--color-primary);
     font-weight: 400;
     font-family: var(--font-primary);
-    /* margin-bottom:.9em; */
     
   }
   
