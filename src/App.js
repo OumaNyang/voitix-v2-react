@@ -11,6 +11,7 @@ import './assets/css/voitix.css';
 import Pricing from './components/Pricing';
 import FAQ from './components/FAQ';
 import Footer from './components/Footer';
+ import withScriptInit from './components/withScriptInit';
 function App() {
   useEffect(() => {
     AOS.init({
@@ -23,7 +24,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
+       <Header />
       <Hero />
       {/* <Features /> */}
       <CallToAction />
@@ -35,4 +36,4 @@ function App() {
   );
 }
 
-export default App;
+ export default withScriptInit(App);

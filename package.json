@@ -3,18 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "https://oumanyang.github.io/voitix-v2-react/",
-
   "dependencies": {
+    "@srexi/purecounterjs": "^1.5.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "aos": "^2.3.4",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
+    "glightbox": "^3.3.0",
     "react": "^18.3.1",
     "react-bootstrap": "^2.10.4",
     "react-dom": "^18.3.1",
     "react-scripts": "5.0.1",
+    "swiper": "^11.1.8",
     "web-vitals": "^2.1.4",
     "workbox-background-sync": "^6.6.0",
     "workbox-broadcast-update": "^6.6.0",
@@ -29,7 +31,6 @@
     "workbox-strategies": "^6.6.0",
     "workbox-streams": "^6.6.0"
   },
- 
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -38,7 +39,6 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-
   "eslintConfig": {
     "extends": [
       "react-app",
