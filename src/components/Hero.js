@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container ,Row,Col} from 'react-bootstrap';
+import { Container ,Row,Col, Button} from 'react-bootstrap';
 // import heroImage from '../assets/images/istock-1371324023-2520w.jpg';  
 import deliveryImageIcon from'../assets/images/icons/delivery--v1.png';
 import purchaseImageIcon from'../assets/images/icons/purchase-img-icon.png';
@@ -21,6 +21,7 @@ const Hero = () => {
                 Experience a streamlined purchasing process with our invoicing software. We provide solutions that simplify your workflow,
                 centralize your purchases ensuring efficiency and accuracy.
               </p>
+              <button className="get-started"  >Get Started</button>
               </Col>
 
          <Col lg={5} className="order-1 order-lg-2 hero-img" data-aos="zoom-out">

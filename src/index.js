@@ -5,8 +5,8 @@ import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import  'bootstrap-icons/bootstrap-icons.svg';
-// import  'bootstrap-icons/bootstrap-icons.css';
+import '@popperjs/core';
+import 'bootstrap/dist/js/bootstrap.min';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import 'aos/dist/aos.css';
 

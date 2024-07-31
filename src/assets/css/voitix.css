@@ -172,14 +172,11 @@ h6 {
     transition-delay: 0 !important;
   }
 }
-
-
+ 
 /*--------------------------------------------------------------
 # Warning Alert
 --------------------------------------------------------------*/
- 
-
-.warning-alert {
+ .warning-alert {
   display: none;
   position: fixed;
   top: 50%;
@@ -195,29 +192,16 @@ h6 {
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
-/* .header {
+ .header {
   transition: all 0.5s;
   z-index: 997;
-  padding: 15px 0; 
-  background:  rgba(255, 255, 255, 1) ;
-  border-bottom:2px solid #b70d0d;
-  box-shadow: #001f8d;
-} */
-
-.header {
-  /* border-top:3px solid #cd0c0c; */
-
-  transition: all 0.5s;
-  z-index: 997;
-  padding: 15px 0; 
+  padding: 5px 0; 
   background: rgba(255, 255, 255, 1);
 }
  
-
 .header.sticked {
-  background: #ffffff;
-  padding: 15px 0;
-  box-shadow: 0px 4px 6px rgba(236, 5, 5, 0.2); /* Adjust these values as needed */
+   padding: 15px 0;
+  box-shadow: 0px 4px 6px rgba(76, 76, 76, 0.2) !important;  
 
  }
 
@@ -230,7 +214,7 @@ h6 {
   font-size: 30px;
   margin: 0;
   font-weight: 700;
-  color: #f80606;
+  color: var(--color-primary);
   font-family: var(--font-primary);
 }
 
@@ -280,20 +264,29 @@ h6 {
   .navbar .active,
   .navbar .active:focus,
   .navbar li:hover>a {
-    color: #fd1515;
+    color: var(--color-primary);
   }
 
-  .navbar .get-a-quote,
-  .navbar .get-a-quote:focus {
+  .navbar .sign-in-btn 
+ {
     background: var(--color-primary);
+     padding: 8px 20px;
+    margin-left: 30px;
+    border-radius:50px;
+    color: var(--color-white);
+   }
+
+   .navbar .sign-in-btn:focus {
+    background: inherit;
+    border: 2px solid  var(--color-primary);
     padding: 8px 20px;
     margin-left: 30px;
     border-radius:50px;
-    color: #fff;
+    color: var(--color-primary);
   }
 
-  .navbar .get-a-quote:hover,
-  .navbar .get-a-quote:focus:hover {
+  .navbar .sign-in-btn:hover,
+  .navbar .sign-in-btn:focus:hover {
     color: #fff;
     background: #1d1d1d;
   }
@@ -377,7 +370,7 @@ h6 {
 /*--------------------------------------------------------------
 # Mobile Navigation
 --------------------------------------------------------------*/
-@media (max-width: 1279px) {
+/* @media (max-width: 1279px) {
   .navbar {
     position: fixed;
     top: 0;
@@ -428,8 +421,8 @@ h6 {
     color: #fff;
   }
 
-  .navbar .get-a-quote,
-  .navbar .get-a-quote:focus {
+  .navbar .sign-in-btn,
+  .navbar .sign-in-btn:focus {
     background: var(--color-primary);
     padding: 8px 20px;
     border-radius: 4px;
@@ -437,8 +430,8 @@ h6 {
     color: #fff;
   }
 
-  .navbar .get-a-quote:hover,
-  .navbar .get-a-quote:focus:hover {
+  .navbar .sign-in-btn:hover,
+  .navbar .sign-in-btn:focus:hover {
     color: #fff;
     background: rgba(13, 66, 255, 0.8);
   }
@@ -495,7 +488,7 @@ h6 {
     background: rgba(14, 29, 52, 0.8);
     z-index: 9996;
   }
-}
+} */
 
 
 
@@ -528,7 +521,7 @@ section {
 }
 
 .section-header h2 {
-  font-size: 2.8rem;
+  font-size: 2.3rem;
   font-weight: 700;
   text-transform: uppercase;
   margin-bottom: 20px;
@@ -562,7 +555,7 @@ section {
   right: 0;
   z-index: 1;
   font-weight: 700;
-  font-size: 3rem;
+  font-size: 2.5rem;
   text-transform: uppercase;
   line-height: 0;
 }
@@ -607,7 +600,7 @@ section {
   background-size: cover;
   background-position: center;
   position: relative;
-  padding: 10px 0 60px 0;
+  padding: 100px 0 60px 0;
   color: rgba(255, 255, 255, 0.8);
   font-family: var(--font-default);
 }
@@ -630,45 +623,26 @@ section {
 }
 
 .hero p {
-  font-size: 18px;
+  font-size:1.3rem;
   font-weight: 400;
   margin: 10px 0px 40px 0px;
 }
 
-.hero .stats-item {
-  padding: 30px;
-  width: 100%;
+.hero .get-started{
+    padding: .6rem .4rem !important;
+  background-color: transparent;
+  border: 2px solid var(--color-white);
+  color: var(--color-white);
+  border-radius: 5px;
 }
-
-.hero .stats-item span {
-  font-size: 32px;
-  display: block;
-  font-weight: 700;
-  margin-bottom: 15px;
-  padding-bottom: 15px;
-  position: relative;
+.hero .get-started:hover,.hero .get-started:hover{
+padding: .6rem .4rem !important;
+background-color: var(--color-default);
+border: 2px solid var(--color-default);
+color: var(--color-white);
+border-radius: 5px;
 }
-
-.hero .stats-item span:after {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 20px;
-  height: 3px;
-  background: var(--color-primary);
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-}
-
-.hero .stats-item p {
-  padding: 0;
-  margin: 0;
-  font-family: var(--font-primary);
-  font-size: 15px;
-  font-weight: 600;
-}
+ 
 /*--------------------------------------------------------------
 # Featured Services Section
 --------------------------------------------------------------*/
@@ -1093,13 +1067,13 @@ Features Section
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 55px;
+  height: 55px;
   border-radius: 50%;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  font-size: 16px;
-  color: rgba(255, 255, 255, 0.7);
-  margin-right: 10px;
+  font-size: 25px;
+  color: var(--color-white);
+  margin-right: 15px;
   transition: 0.3s;
 }
 
@@ -1132,12 +1106,14 @@ Features Section
   margin: 0;
 }
 
-.footer .footer-links ul i {
+/* .footer .social-links a i {
   padding-right: 2px;
-  color: rgba(216, 65, 65, 0.8);
-  font-size: 12px;
-  line-height: 0;
-}
+  color: var(--color-white);
+  font-size: 40px;
+  line-height: 10;
+  margin-right: 25px;
+  padding: 15px;
+} */
 
 .footer .footer-links ul li {
   padding: 10px 0;

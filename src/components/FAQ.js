@@ -39,7 +39,7 @@ const FAQ = () => {
     <section id="faq" className="faq">
       <Container data-aos="fade-up">
         <div className="section-header">
-          {/* <span>Frequently Asked Questions</span> */}
+          <span>Frequently Asked Questions</span>
           <h2>Frequently Asked Questions</h2>
         </div>
         <Row className="justify-content-center" data-aos="fade-up" data-aos-delay="200">
