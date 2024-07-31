@@ -24,7 +24,7 @@ const Header = () => {
   //       </Navbar>
   //     </Container>
   //   </header>
-    <header id="header" className="header d-flex align-items-center fixed-top">
+    <header id="header" className="header d-flex align-items-center sticky-top">
     <div className="container-fluid container-xl d-flex align-items-center justify-content-between">
 
       <a href="https://voitix.azacloud.com/en/" className="logo d-flex align-items-center">
