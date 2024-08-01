@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/voitix-v2-react/static/css/main.3ad176dd.css",
-    "main.js": "/voitix-v2-react/static/js/main.ae69a721.js",
+    "main.css": "/voitix-v2-react/static/css/main.1719eaa8.css",
+    "main.js": "/voitix-v2-react/static/js/main.9708f875.js",
     "static/js/453.0962fdb4.chunk.js": "/voitix-v2-react/static/js/453.0962fdb4.chunk.js",
     "static/media/istock-1371324023-2520w.jpg": "/voitix-v2-react/static/media/istock-1371324023-2520w.10622a16f7abfd28bbe1.jpg",
     "static/media/Blog_Fourth-Image-RFQ.png": "/voitix-v2-react/static/media/Blog_Fourth-Image-RFQ.8b796b1bf03ccec39afb.png",
@@ -20,12 +20,12 @@
     "static/media/purchase-img-icon.png": "/voitix-v2-react/static/media/purchase-img-icon.3f4b06d1289f2ceb7f1e.png",
     "static/media/invoice.png": "/voitix-v2-react/static/media/invoice.6bf204c8b38a98c009fb.png",
     "index.html": "/voitix-v2-react/index.html",
-    "main.3ad176dd.css.map": "/voitix-v2-react/static/css/main.3ad176dd.css.map",
-    "main.ae69a721.js.map": "/voitix-v2-react/static/js/main.ae69a721.js.map",
+    "main.1719eaa8.css.map": "/voitix-v2-react/static/css/main.1719eaa8.css.map",
+    "main.9708f875.js.map": "/voitix-v2-react/static/js/main.9708f875.js.map",
     "453.0962fdb4.chunk.js.map": "/voitix-v2-react/static/js/453.0962fdb4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3ad176dd.css",
-    "static/js/main.ae69a721.js"
+    "static/css/main.1719eaa8.css",
+    "static/js/main.9708f875.js"
   ]
 }
