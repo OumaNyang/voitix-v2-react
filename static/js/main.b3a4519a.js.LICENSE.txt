@@ -10,14 +10,6 @@
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
   */
 
-/*!
- * purecounter.js - A simple yet configurable native javascript counter which you can count on.
- * Author: Stig Rex
- * Version: 1.5.0
- * Url: https://github.com/srexi/purecounterjs
- * License: MIT
- */
-
 /**
  * @license React
  * react-dom.production.min.js
@@ -56,4 +48,37 @@
  *
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
+ */
+
+/**
+ * @remix-run/router v1.19.0
+ *
+ * Copyright (c) Remix Software Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE.md file in the root directory of this source tree.
+ *
+ * @license MIT
+ */
+
+/**
+ * React Router DOM v6.26.0
+ *
+ * Copyright (c) Remix Software Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE.md file in the root directory of this source tree.
+ *
+ * @license MIT
+ */
+
+/**
+ * React Router v6.26.0
+ *
+ * Copyright (c) Remix Software Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE.md file in the root directory of this source tree.
+ *
+ * @license MIT
  */
