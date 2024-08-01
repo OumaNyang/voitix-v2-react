@@ -1,6 +1,7 @@
 import React from 'react';
-import visaLogo from '../assets/images/brand/card_decals.png'; 
- // Adjust the path as needed
+import visaLogo from '../assets/images/brand/card_decals.png';
+import logoFavicon from '../assets/images/brand/android-chrome-192x192.png';
+ 
 import { Col, Container, Row } from 'react-bootstrap';
 
 const Footer = () => {
@@ -57,7 +58,24 @@ const Footer = () => {
 
     <a href="#./" className="scroll-top d-flex align-items-center justify-content-center"><i className="bi bi-arrow-up-short"></i></a>
 
-    <div id="preloader"></div>
+  
+<div  id="preloader" class="preloader">
+  <div class="preloader-content">
+    <div class="preloader-dots">
+       <div class="dot dot1"></div>
+      <div class="dot dot2"></div>
+      <div class="dot dot3"></div>
+      <div class="dot dot4"></div>
+      <div class="dot dot5"></div>
+      <div class="dot dot6"></div>
+      <div class="dot dot7"></div>
+      <div class="dot dot8"></div>
+      <img src={logoFavicon} alt="Logo" class="preloader-image"/>
+      </div>
+      {/* <img src={logoFavicon} alt="Logo" class="preloader-image"/> */}
+      </div>
+</div>
+
 
     <div className="warning-alert" id="copyWarning">
     Copying content from this page is not allowed.

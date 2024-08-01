@@ -85,22 +85,22 @@ const withScriptInit = (WrappedComponent) => {
         }
       };
 
-    //   document.addEventListener("contextmenu", (e) => {
-    //     e.preventDefault();
-    //     displayAlert();
-    //   });
+      document.addEventListener("contextmenu", (e) => {
+        e.preventDefault();
+        displayAlert();
+      });
 
-    //   document.addEventListener("keydown", (e) => {
-    //     if ((e.ctrlKey && e.keyCode === 86) || (e.ctrlKey && e.keyCode === 67)) {
-    //       e.preventDefault();
-    //       displayAlert();
-    //     }
-    //   });
+      document.addEventListener("keydown", (e) => {
+        if ((e.ctrlKey && e.keyCode === 86) || (e.ctrlKey && e.keyCode === 67)) {
+          e.preventDefault();
+          displayAlert();
+        }
+      });
 
-    //   document.addEventListener("paste", (e) => {
-    //     e.preventDefault();
-    //     displayAlert();
-    //   });
+      document.addEventListener("paste", (e) => {
+        e.preventDefault();
+        displayAlert();
+      });
 
       return () => {
         document.removeEventListener('scroll', () => {});
