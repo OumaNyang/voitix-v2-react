@@ -207,9 +207,8 @@ h6 {
   border-radius: 5px;
   z-index: 9999;
 }
-
-/* * Header and Navbar */
-.header {
+/*  
+ .header {
   width: 100%;
   background: #fff;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
@@ -314,15 +313,335 @@ h6 {
   background: var(--color-white);
   color: var(--color-primary);
   border-color: var(--color-primary);
+} */
+
+/*--------------------------------------------------------------
+#  Mobile styles
+--------------------------------------------------------------*/
+/* @media (max-width: 1279px) {
+  #preloader  {
+    display: none;
+  }
+  .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    bottom: 0;
+    transition: 0.3s;
+    z-index: 9997;
+    background: var(--color-white);
+    padding: 0px !important;
+  }
+
+  .header.sticked {
+    padding: 1px 0 !important;
+    box-shadow: 0px 4px 6px rgba(76, 76, 76, 0.2) !important;
+  }
+
+ 
+
+  .navbar ul {
+    position: relative;
+    padding: 50px 0 10px 0;
+    margin: 0;
+    overflow-y: auto;
+    z-index: 9998;
+    background-color: #efd0d0 !important;
+  }
+
+  .navbar a,
+  .navbar a:focus {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--color-primary);
+    transition: 0.3s;
+  }
+
+  .navbar .sign-in-btn {
+    background: transparent;
+    padding: 8px 20px;
+    border-radius: 5px;
+    margin: 15px;
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+    text-align: center;
+  }
+
+  .navbar .sign-in-btn:hover,
+  .navbar .sign-in-btn:active,
+  .navbar .sign-in-btn:focus {
+    border: 1px solid var(--color-primary) !important;
+    background: var(--color-primary) !important;
+    color: var(--color-white) !important;
+  }
+
+  .navbar .dropdown ul {
+    display: none;
+    padding: 10px 0;
+    margin: 10px 20px;
+    border: 1px solid #19335c;
+    transition: all 0.5s ease-in-out;
+  }
+
+  .navbar .dropdown > .dropdown-active {
+    display: inline-block;
+  }
+ 
+  .header .navbar-nav .dropdown-menu {
+    position: relative;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    min-width: 10rem;
+    padding: 0.5rem 0;
+    margin: 0;
+    background-color: #fff;
+    border: none;
+   }
+  
+
+  .header .mobile-nav-toggle {
+    font-size: 2.5em !important;
+    cursor: pointer;
+    line-height: 0;
+    transition: 0.5s;
+    z-index: 9999;
+    box-shadow: none !important;
+    border: none !important;
+    color: var(--color-default) !important;
+  }
+
+  .header .mobile-nav-toggle :active,
+  .header .mobile-nav-t@media (max-width: 1279px) {
+    #preloader  {
+      display: none;
+    }
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      bottom: 0;
+      transition: 0.3s;
+      z-index: 9997;
+      background: var(--color-white);
+      padding: 0px !important;
+    }
+  
+    .header.sticked {
+      padding: 1px 0 !important;
+      box-shadow: 0px 4px 6px rgba(76, 76, 76, 0.2) !important;
+    }
+  
+   
+  
+    .navbar ul {
+      position: relative;
+      padding: 50px 0 10px 0;
+      margin: 0;
+      overflow-y: auto;
+      z-index: 9998;
+      background-color: #efd0d0 !important;
+    }
+  
+    .navbar a,
+    .navbar a:focus {
+      display: flex;
+      align-items: center;
+      padding: 12px 20px;
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--color-primary);
+      transition: 0.3s;
+    }
+  
+    .navbar .sign-in-btn {
+      background: transparent;
+      padding: 8px 20px;
+      border-radius: 5px;
+      margin: 15px;
+      color: var(--color-primary);
+      border: 1px solid var(--color-primary);
+      text-align: center;
+    }
+  
+    .navbar .sign-in-btn:hover,
+    .navbar .sign-in-btn:active,
+    .navbar .sign-in-btn:focus {
+      border: 1px solid var(--color-primary) !important;
+      background: var(--color-primary) !important;
+      color: var(--color-white) !important;
+    }
+  
+    .navbar .dropdown ul {
+      display: none;
+      padding: 10px 0;
+      margin: 10px 20px;
+      border: 1px solid #19335c;
+      transition: all 0.5s ease-in-out;
+    }
+  
+    .navbar .dropdown > .dropdown-active {
+      display: inline-block;
+    }
+   
+    .header .navbar-nav .dropdown-menu {
+      position: relative;
+      top: 100%;
+      left: 0;
+      z-index: 1000;
+      min-width: 10rem;
+      padding: 0.5rem 0;
+      margin: 0;
+      background-color: #fff;
+      border: none;
+     }
+    
+  
+    .header .mobile-nav-toggle {
+      font-size: 2.5em !important;
+      cursor: pointer;
+      line-height: 0;
+      transition: 0.5s;
+      z-index: 9999;
+      box-shadow: none !important;
+      border: none !important;
+      color: var(--color-default) !important;
+    }
+  
+    .header .mobile-nav-toggle :active,
+    .header .mobile-nav-toggle :focus {
+      line-height: 0;
+      transition: 0.5s;
+      box-shadow: none;
+      border: none !important;
+      color: var(--color-primary) !important;
+    }
+  
+    .mobile-nav-active .navbar {
+      right: 0;
+    }
+  }  
+
+  .mobile-nav-active .navbar {
+    right: 0;
+  }
+}   */
+
+
+.header {
+  width: 100%;
+  background: #fff;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  transition: all 0.3s ease-in-out;
+  font-family: var(--font-default);
+}
+
+.header.sticked {
+  padding: 5px 0;
+  box-shadow: 0px 4px 6px rgba(76, 76, 76, 0.2) !important;
+}
+
+.header .navbar {
+  width: 100%;
+}
+
+.header .navbar-brand {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+}
+
+.header .navbar-toggler {
+  border: none;
+  font-size: 24px;
+}
+
+.header .navbar-nav {
+  margin-left: auto;
+}
+
+.header .navbar-nav .nav-link {
+  color: var(--color-default);
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 0;
+  margin-left: 15px;
+}
+.header .navbar-nav .nav-link:active,
+.header .navbar-nav .nav-link:hover,
+.header .navbar-nav .nav-link:focus {
+  color: var(--color-primary);
+}
+.navbar-nav .active {
+  font-weight: bold;
+  color: var(--color-primary);
+}
+
+.header .navbar-nav .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  min-width: 12rem;
+  padding: 0.5rem 0;
+  margin: 0;
+  background-color: #ffffff;
+  border: none;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.header .navbar-nav .dropdown.show .dropdown-menu {
+  display: block;
+}
+
+.header .navbar-nav .nav-item.dropdown > a::after {
+  content: '\f078';  
+  font-family: 'Font Awesome 5 Free';
+   display:none;
+ }
+
+.header .navbar-nav .dropdown-menu a {
+  color: #333;
+  padding: 10px 15px;
+  white-space: nowrap;
+}
+
+.header .navbar-nav .dropdown-menu a:hover {
+  background-color: #f8f9fa;
+}
+
+.header .sign-in-btn {
+  background: var(--color-primary);
+  padding: 8px 20px;
+  margin-left: 10px;
+  border-radius: 50px;
+  color: var(--color-white);
+  text-align: center;
+  display: inline-block;
+  font-weight: bold;
+  border: 2px solid var(--color-primary);
+  transition: background 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+
+.header .sign-in-btn:hover,
+.header .sign-in-btn:focus {
+  background: var(--color-white);
+  color: var(--color-primary);
+  border-color: var(--color-primary);
 }
 
 /*--------------------------------------------------------------
 #  Mobile styles
 --------------------------------------------------------------*/
 @media (max-width: 1279px) {
-  #preloader  {
-    display: none;
-  }
   .navbar {
     position: fixed;
     top: 0;
@@ -377,16 +696,11 @@ h6 {
     color: var(--color-white) !important;
   }
 
-  .navbar .dropdown ul {
-    display: none;
-    padding: 10px 0;
-    margin: 10px 20px;
-    border: 1px solid #19335c;
-    transition: all 0.5s ease-in-out;
-  }
-
-  .navbar .dropdown > .dropdown-active {
-    display: block;
+  .header .navbar-nav .dropdown-menu {
+    position: relative;
+    top: 0;
+    left: 0;
+    background-color: #efd0d0;
   }
 
   .header .mobile-nav-toggle {
@@ -400,8 +714,8 @@ h6 {
     color: var(--color-default) !important;
   }
 
-  .header .mobile-nav-toggle :active,
-  .header .mobile-nav-toggle :focus {
+  .header .mobile-nav-toggle:active,
+  .header .mobile-nav-toggle:focus {
     line-height: 0;
     transition: 0.5s;
     box-shadow: none;
@@ -413,6 +727,33 @@ h6 {
     right: 0;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*--------------------------------------------------------------
 # Sections & Section Header

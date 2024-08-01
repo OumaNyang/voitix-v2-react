@@ -4,99 +4,56 @@ import voitixLogo from "../assets/images/brand/voitix-logo.png";
 
 const Header = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
-  const [activeItem, setActiveItem] = useState('Home');
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const toggleNav = () => {
     setIsNavOpen(!isNavOpen);
-    document.body.classList.toggle('mobile-nav-active', !isNavOpen);
   };
 
-  const handleItemClick = (item) => {
-    setActiveItem(item);
-    // Close the navigation if open in mobile view
-    if (isNavOpen) {
-      toggleNav();
-    }
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
+  const handleItemClick = () => {
+    setIsNavOpen(false);
+    setIsDropdownOpen(false);
   };
 
   return (
-    <header id="header" className="header fixed-top d-flex align-items-center">
+    <header id="header" className={`header fixed-top d-flex align-items-center ${isNavOpen ? 'mobile-nav-active' : ''}`}>
       <Container fluid className="container-xl d-flex align-items-center justify-content-between">
         <Navbar expand="lg" className="w-100">
           <Navbar.Brand href="https://voitix.azacloud.com/en/" className="d-flex align-items-center">
             <img width={100} src={voitixLogo} alt="Voitix" />
           </Navbar.Brand>
-          <Navbar.Toggle
-            aria-controls="basic-navbar-nav"
-            className="mobile-nav-toggle"
-            onClick={toggleNav}
-          >
+          <Navbar.Toggle aria-controls="basic-navbar-nav" className="mobile-nav-toggle" onClick={toggleNav}>
             <i className={`bi ${isNavOpen ? 'bi-x-circle' : 'bi-list'}`}></i>
           </Navbar.Toggle>
           <Navbar.Collapse id="basic-navbar-nav" className={isNavOpen ? 'show' : ''}>
             <Nav className="ml-auto">
-              <Nav.Link
-                href="./#"
-                className={activeItem === 'Home' ? 'active' : ''}
-                onClick={() => handleItemClick('Home')}
-              >
-                Home
-              </Nav.Link>
-              <Nav.Link
-                href="./#about"
-                className={activeItem === 'Features' ? 'active' : ''}
-                onClick={() => handleItemClick('Features')}
-              >
-                Features
-              </Nav.Link>
-              <Nav.Link
-                href="./#faq"
-                className={activeItem === 'FAQs' ? 'active' : ''}
-                onClick={() => handleItemClick('FAQs')}
-              >
-                FAQs
-              </Nav.Link>
-              <Nav.Link
-                href="./#pricing"
-                className={activeItem === 'Pricing' ? 'active' : ''}
-                onClick={() => handleItemClick('Pricing')}
-              >
-                Pricing
-              </Nav.Link>
-              <Nav.Link
-                href="./#accounting"
-                className={activeItem === 'Accounting' ? 'active' : ''}
-                onClick={() => handleItemClick('Accounting')}
-              >
-                Accounting
-              </Nav.Link>
+              <Nav.Link href="./#" onClick={handleItemClick}>Home</Nav.Link>
+              <Nav.Link href="./#about" onClick={handleItemClick}>Features</Nav.Link>
+              <Nav.Link href="./#faq" onClick={handleItemClick}>FAQs</Nav.Link>
+              <Nav.Link href="./#pricing" onClick={handleItemClick}>Pricing</Nav.Link>
+              <Nav.Link href="./#accounting" onClick={handleItemClick}>Accounting</Nav.Link>
               <NavDropdown
                 title={
                   <>
-                    Learn & Help <i className="bi bi-chevron-down"></i>
+                    Learn & Help &nbsp; <i className="bi bi-chevron-down"></i>
                   </>
                 }
                 id="support-dropdown"
-                className="dropdown"
+                className={`dropdown ${isDropdownOpen ? 'show' : ''}`}
+                onClick={toggleDropdown}
               >
-                <NavDropdown.Item
-                  href="#blogs"
-                  className={activeItem === 'Blogs' ? 'active' : ''}
-                  onClick={() => handleItemClick('Blogs')}
-                >
+                <NavDropdown.Item href="#blogs" onClick={handleItemClick}>
                   Blogs
                 </NavDropdown.Item>
-                <NavDropdown.Item
-                  href="#documentation"
-                  className={activeItem === 'Documentation' ? 'active' : ''}
-                  onClick={() => handleItemClick('Documentation')}
-                >
+                <NavDropdown.Item href="#documentation" onClick={handleItemClick}>
                   Documentation
                 </NavDropdown.Item>
               </NavDropdown>
-              <Button className="sign-in-btn" href="https://voitix.azacloud.com/login">
-                Sign In / Sign Up
-              </Button>
+              <Button className="sign-in-btn" href="https://voitix.azacloud.com/login">Sign In / Sign Up</Button> 
             </Nav>
           </Navbar.Collapse>
         </Navbar>
