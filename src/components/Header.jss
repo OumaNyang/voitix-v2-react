@@ -1,59 +1,66 @@
-import React from 'react';
-import { Navbar, Nav, Container } from 'react-bootstrap';
-import voitixLogo from  "../assets/images/brand/voitix-logo.png";
-const Header = () => {
-  return (
-    <header className="header fixed-top"> 
-      <Container fluid> 
-        <Navbar className="navbar" expand="lg" variant="light">
-          <Navbar.Brand href="https://voitix.azacloud.com/en/">
+ import React, { useState } from 'react';
+import { Navbar, Nav, NavDropdown, Container, Button } from 'react-bootstrap';
+import voitixLogo from "../assets/images/brand/voitix-logo.png";
 
-          <img src={voitixLogo} alt="Voitix" />
+const Header = () => {
+  const [isNavOpen, setIsNavOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const toggleNav = () => {
+    setIsNavOpen(!isNavOpen);
+  };
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
+  const handleItemClick = () => {
+    setIsNavOpen(false);
+    setIsDropdownOpen(false);
+  };
+
+  return (
+    <header id="header" className={`header fixed-top d-flex align-items-center ${isNavOpen ? 'mobile-nav-active' : ''}`}>
+      <Container fluid className="container-xl d-flex align-items-center justify-content-between">
+        <Navbar expand="lg" className="w-100">
+          <Navbar.Brand href="https://voitix.azacloud.com/en/" className="d-flex align-items-center">
+            <img width={100} src={voitixLogo} alt="Voitix" />
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
+          <Navbar.Toggle aria-controls="basic-navbar-nav" className="mobile-nav-toggle" onClick={toggleNav}>
+            <i className={`bi ${isNavOpen ? 'bi-x-circle' : 'bi-list'}`}></i>
+          </Navbar.Toggle>
+          <Navbar.Collapse id="basic-navbar-nav" className={isNavOpen ? 'show' : ''}>
             <Nav className="ml-auto">
-              <Nav.Link href="#home" className="active">Home</Nav.Link>
-              <Nav.Link href="#features">Features</Nav.Link>
-              <Nav.Link href="#faq">FAQS</Nav.Link>
-              <Nav.Link href="#pricing">Pricing</Nav.Link>
-              <Nav.Link href="#support">Support</Nav.Link>
-              <Nav.Link href="https://voitix.azacloud.com/login" className="get-a-quote">Sign In / Sign Up</Nav.Link>
+              <Nav.Link href="./#" onClick={handleItemClick}>Home</Nav.Link>
+              <Nav.Link href="./#about" onClick={handleItemClick}>Features</Nav.Link>
+              <Nav.Link href="./#faq" onClick={handleItemClick}>FAQs</Nav.Link>
+              <Nav.Link href="./#pricing" onClick={handleItemClick}>Pricing</Nav.Link>
+              <Nav.Link href="./#accounting" onClick={handleItemClick}>Accounting</Nav.Link>
+              <NavDropdown
+                title={
+                  <>
+                    Learn & Help &nbsp; <i className="bi bi-chevron-down"></i>
+                  </>
+                }
+                id="support-dropdown"
+                className={`dropdown ${isDropdownOpen ? 'show' : ''}`}
+                onClick={toggleDropdown}
+              >
+                <NavDropdown.Item href="#blogs" onClick={handleItemClick}>
+                  Blogs
+                </NavDropdown.Item>
+                <NavDropdown.Item href="#documentation" onClick={handleItemClick}>
+                  Documentation
+                </NavDropdown.Item>
+              </NavDropdown>
+              <Button className="sign-in-btn" href="https://voitix.azacloud.com/login">Sign In / Sign Up</Button> 
             </Nav>
           </Navbar.Collapse>
         </Navbar>
       </Container>
     </header>
-  //   <header id="header" className="header d-flex align-items-center fixed-top">
-  //   <div className="container-fluid container-xl d-flex align-items-center justify-content-between">
-
-  //     <a href="https://voitix.azacloud.com/en/" className="logo d-flex align-items-center">
-  //        <img width={100} src={voitixLogo} alt="Voitix" />
-
-  //      </a>
-
-  //     <i className="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
-  //     <i className="mobile-nav-toggle mobile-nav-hide d-none  bi bi-x-circle"></i>
-  //     <nav id="navbar" className="navbar">
-  //       <ul>
-  //         <li><a href="./#" className="active">Home</a></li>
-  //         <li><a href="./#about">Features</a></li>
-  //         <li><a href="./#faq">FAQS</a></li>
-  //         <li><a href="./#pricing">Pricing</a></li>
-  //         <li><a href="./#pricing">Acounting</a></li>
-  //          <li className="dropdown"><a href="#support"><span>Learn & Help</span> <i className="bi bi-chevron-down dropdown-indicator"></i></a>
-  //           <ul>
-  //           <li><a href="#blogs">Blogs</a></li>
-  //            <li><a  target="_blank" href="#documentation">Documentation</a></li>
-  //           </ul>
-  //         </li>
-  //         <li><a className=" sign-in-btn" href="https://voitix.azacloud.com/login">Sign In / Sign Up</a></li>
-  //       </ul>
-  //     </nav> 
-
-  //   </div>
-  // </header> 
   );
 };
 
 export default Header;
+ 

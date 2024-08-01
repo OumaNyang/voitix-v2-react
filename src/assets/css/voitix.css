@@ -129,8 +129,9 @@ h6 {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.9);
-  display: flex;
+  background: hsla(0, 0%, 100%, 0.9);
+  /* display: flex; */
+  display: none;
   justify-content: center;
   align-items: center;
   z-index: 9999;
@@ -727,32 +728,88 @@ h6 {
     right: 0;
   }
 }
+ 
+ /*--------------------------------------------------------------
+# Breadcrumb Section
+--------------------------------------------------------------*/
 
+.breadcrumbsection {
+  background-color: #2c0000;
+  padding: 20px 20px;
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+/* Linear gradient lines */
+.breadcrumbsection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgb(255, 255, 255) 25%, transparent 25%),
+              linear-gradient(225deg, rgba(236, 164, 164, 0.902) 25%, transparent 25%),
+              linear-gradient(45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%),
+              linear-gradient(315deg, rgba(255, 203, 119, 0.968) 25%, transparent 25%);
+  background-size: 50px 50px;
+  z-index: 1;
+  pointer-events: none;
+}
 
+/* Wave pattern at the bottom using clip-path */
+/* .breadcrumbsection::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to right, #ff5733, #33c4ff, #f0e68c, #8a2be2);
+  clip-path: path('M0,60 Q30,90 60,60 T120,60 T180,60 T240,60 T300,60 T360,60 T420,60 T480,60 T540,60 T600,60 T660,60 T720,60 T780,60 T840,60 T900,60 T960,60 T1020,60 T1080,60 T1140,60 T1200,60 V100 H0 Z');
+  z-index: 2;
+  pointer-events: none;
+} */
 
+/* Additional shape and line patterns */
+.breadcrumbsection .decorative-shapes {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
 
+.breadcrumbsection .decorative-shapes::before,
+.breadcrumbsection .decorative-shapes::after {
+  content: '';
+  position: absolute;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent);
+  border-radius: 50%;
+  opacity: 0.5;
+}
 
+.breadcrumbsection .decorative-shapes::before {
+  width: 200px;
+  height: 200px;
+  top: 20%;
+  left: 30%;
+  /* background-color: aqua; */
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.breadcrumbsection .decorative-shapes::after {
+  width: 300px;
+  height: 300px;
+  top: 60%;
+  left: 70%;
+}
 
 
 /*--------------------------------------------------------------
@@ -761,11 +818,12 @@ h6 {
 section {
   padding: 10px 0;
   overflow: hidden;
+  background-color: rgba(255, 246, 235, 0.836);
 }
 
 .section-header {
   text-align: center;
-  padding: 20px 0;
+  padding: 10px 0;
   position: relative;
 }
 
@@ -1348,15 +1406,6 @@ Features Section
   margin: 0;
 }
 
-/* .footer .social-links a i {
-  padding-right: 2px;
-  color: var(--color-white);
-  font-size: 40px;
-  line-height: 10;
-  margin-right: 25px;
-  padding: 15px;
-} */
-
 .footer .footer-links ul li {
   padding: 10px 0;
   display: flex;
@@ -1396,4 +1445,100 @@ Features Section
 
 .footer .credits a {
   color: #fff;
+}
+
+
+
+
+/* Documentation Section Styles */
+.documentation {
+  padding: 40px 0;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.section-header p {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+/* Card Styles */
+.card-body {
+  display: flex;
+  align-items: center;
+}
+
+.card-body .text-primary {
+  color: #007bff;
+}
+
+.card-body .text-secondary {
+  color: #6c757d;
+}
+
+.card-body .text-success {
+  color: #28a745;
+}
+
+.card-body .text-info {
+  color: #17a2b8;
+}
+
+.card-body h4 {
+  margin-bottom: 10px;
+}
+
+.card-body p {
+  margin-bottom: 0;
+}
+
+/* PageNotFound */
+
+/* PageNotFound.css */
+
+.page-not-found {
+  background-color: #f8f9fa;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.page-not-found .section-header {
+  margin-bottom: 30px;
+}
+
+.page-not-found .section-header span {
+  display: block;
+  font-size: 1.2rem;
+  color: #6c757d;
+}
+
+.page-not-found .section-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #343a40;
+}
+
+.page-not-found .section-header p {
+  font-size: 1rem;
+  color: #6c757d;
+  margin-bottom: 30px;
+}
+
+.page-not-found .section-header .btn-primary {
+  font-size: 1rem;
+  padding: 10px 20px;
+}
+
+.disconnection-image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
 }
