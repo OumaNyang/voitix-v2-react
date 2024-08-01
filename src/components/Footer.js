@@ -59,20 +59,20 @@ const Footer = () => {
     <a href="#./" className="scroll-top d-flex align-items-center justify-content-center"><i className="bi bi-arrow-up-short"></i></a>
 
   
-<div  id="preloader" class="preloader">
-  <div class="preloader-content">
-    <div class="preloader-dots">
-       <div class="dot dot1"></div>
-      <div class="dot dot2"></div>
-      <div class="dot dot3"></div>
-      <div class="dot dot4"></div>
-      <div class="dot dot5"></div>
-      <div class="dot dot6"></div>
-      <div class="dot dot7"></div>
-      <div class="dot dot8"></div>
-      <img src={logoFavicon} alt="Logo" class="preloader-image"/>
+<div  id="preloader" className="preloader">
+  <div className="preloader-content">
+    <div className="preloader-dots">
+       <div className="dot dot1"></div>
+      <div className="dot dot2"></div>
+      <div className="dot dot3"></div>
+      <div className="dot dot4"></div>
+      <div className="dot dot5"></div>
+      <div className="dot dot6"></div>
+      <div className="dot dot7"></div>
+      <div className="dot dot8"></div>
+      <img src={logoFavicon} alt="Logo" className="preloader-image"/>
       </div>
-      {/* <img src={logoFavicon} alt="Logo" class="preloader-image"/> */}
+      {/* <img src={logoFavicon} alt="Logo" className="preloader-image"/> */}
       </div>
 </div>
 

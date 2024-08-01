@@ -8,11 +8,7 @@ const Header = () => {
 
   const toggleNav = () => {
     setIsNavOpen(!isNavOpen);
-    if (!isNavOpen) {
-      document.body.classList.add('mobile-nav-active');
-    } else {
-      document.body.classList.remove('mobile-nav-active');
-    }
+    document.body.classList.toggle('mobile-nav-active', !isNavOpen);
   };
 
   const handleItemClick = (item) => {
@@ -30,7 +26,11 @@ const Header = () => {
           <Navbar.Brand href="https://voitix.azacloud.com/en/" className="d-flex align-items-center">
             <img width={100} src={voitixLogo} alt="Voitix" />
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" className="mobile-nav-toggle" onClick={toggleNav}>
+          <Navbar.Toggle
+            aria-controls="basic-navbar-nav"
+            className="mobile-nav-toggle"
+            onClick={toggleNav}
+          >
             <i className={`bi ${isNavOpen ? 'bi-x-circle' : 'bi-list'}`}></i>
           </Navbar.Toggle>
           <Navbar.Collapse id="basic-navbar-nav" className={isNavOpen ? 'show' : ''}>
@@ -94,7 +94,9 @@ const Header = () => {
                   Documentation
                 </NavDropdown.Item>
               </NavDropdown>
-              <Button className="sign-in-btn" href="https://voitix.azacloud.com/login">Sign In / Sign Up</Button> 
+              <Button className="sign-in-btn" href="https://voitix.azacloud.com/login">
+                Sign In / Sign Up
+              </Button>
             </Nav>
           </Navbar.Collapse>
         </Navbar>
