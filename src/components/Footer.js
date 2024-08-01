@@ -5,7 +5,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 
 const Footer = () => {
   return (
-     <footer id="footer" className="footer">
+     <section id="footer" className="footer">
       <Container className="container">
 
         <Row className="row gy-4">
@@ -16,7 +16,7 @@ const Footer = () => {
             </h2>
             <p>Experience a streamlined purchasing process with our invoicing software. We provide solutions that simplify your workflow, centralize your purchases ensuring efficiency and accuracy </p>
             <div className="d-flex m-auto mt-4">
-              <img height="60px" className="p-1" src={visaLogo} alt="VISA" />
+              <img height={50} className="p-1" src={visaLogo} alt="VISA" />
             </div>
           </Col>
 
@@ -55,14 +55,14 @@ const Footer = () => {
         </div>
       </div>
 
-        <a href="#./" className="scroll-top d-flex align-items-center justify-content-center"><i className="bi bi-arrow-up-short"></i></a>
+    <a href="#./" className="scroll-top d-flex align-items-center justify-content-center"><i className="bi bi-arrow-up-short"></i></a>
 
     <div id="preloader"></div>
-    
+
     <div className="warning-alert" id="copyWarning">
-        Copying content from this page is not allowed.
+    Copying content from this page is not allowed.
     </div> 
-    </footer>
+    </section>
      );
  
 };

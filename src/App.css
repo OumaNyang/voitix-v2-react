@@ -1,12 +1,8 @@
  /* Custom styles */
-/* .header.fixed-top {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
 
 .header .navbar-brand img {
-  height: 50px;
-} */
+  /* height: 40px; */
+}  
 /* 
 .hero {
   background: #f8f9fa;
@@ -28,5 +24,70 @@
   font-size: 36px;
   font-weight: bold;
 } */
+/* 
+.header {
+  background-color: #fac6c6; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
+.navbar {
+  padding: 1rem;
+}
+  .navbar
+
+.navbar .navbar-nav .nav-link {
+  margin-right: 1rem;  
+  color: #333;  
+}
+
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link.active {
+  color: #C10000; 
+}
+
+.get-a-quote {
+  background-color: #C10000;  
+  color: #fff;  
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.get-a-quote:hover {
+  background-color: #a00000; 
+  color: #fff;  
+}
+*/
  
+  /* #support-dropdown .dropdown-menu {
+  background-color: #fff; 
+  border-radius: 4px;  
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}  
+ 
+#support-dropdown .dropdown-item {
+  color: #333;  
+}
+
+#support-dropdown .dropdown-item:hover {
+  background-color: #f8f9fa;
+  color: #C10000; 
+}   */
+
+/* Responsive adjustments */
+/* @media (max-width: 992px) {
+  .navbar {
+    padding: 0.5rem 1rem;
+  }
+
+  .navbar-nav .nav-link {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .get-a-quote {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    width: 100%; 
+  } 
+} */

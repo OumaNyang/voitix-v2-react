@@ -6,7 +6,7 @@ import Hero from './components/Hero';
 // import Features from './components/Features';
 import CallToAction from './components/CallToAction';
 import WhyVoitix from './components/WhyVoitix';
-// import './App.css'; // You can add custom styles here
+import './App.css'; // You can add custom styles here
 // import './assets/css/voitix.css'; 
 import Pricing from './components/Pricing';
 import FAQ from './components/FAQ';

@@ -1,58 +1,105 @@
-import React from 'react';
-import { Navbar, Nav, Container } from 'react-bootstrap';
-import voitixLogo from  "../assets/images/brand/voitix-logo.png";
+import React, { useState } from 'react';
+import { Navbar, Nav, NavDropdown, Container, Button } from 'react-bootstrap';
+import voitixLogo from "../assets/images/brand/voitix-logo.png";
+
 const Header = () => {
+  const [isNavOpen, setIsNavOpen] = useState(false);
+  const [activeItem, setActiveItem] = useState('Home');
+
+  const toggleNav = () => {
+    setIsNavOpen(!isNavOpen);
+    if (!isNavOpen) {
+      document.body.classList.add('mobile-nav-active');
+    } else {
+      document.body.classList.remove('mobile-nav-active');
+    }
+  };
+
+  const handleItemClick = (item) => {
+    setActiveItem(item);
+    // Close the navigation if open in mobile view
+    if (isNavOpen) {
+      toggleNav();
+    }
+  };
+
   return (
-  //   <header className="header fixed-top"> 
-  //     <Container fluid> 
-  //       <Navbar expand="lg" variant="light">
-  //         <Navbar.Brand href="https://voitix.azacloud.com/en/">
-
-  //         <img src={voitixLogo} alt="Voitix" />
-  //         </Navbar.Brand>
-  //         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-  //         <Navbar.Collapse id="basic-navbar-nav">
-  //           <Nav className="ml-auto">
-  //             <Nav.Link href="#home" className="active">Home</Nav.Link>
-  //             <Nav.Link href="#features">Features</Nav.Link>
-  //             <Nav.Link href="#faq">FAQS</Nav.Link>
-  //             <Nav.Link href="#pricing">Pricing</Nav.Link>
-  //             <Nav.Link href="#support">Support</Nav.Link>
-  //             <Nav.Link href="https://voitix.azacloud.com/login" className="get-a-quote">Sign In / Sign Up</Nav.Link>
-  //           </Nav>
-  //         </Navbar.Collapse>
-  //       </Navbar>
-  //     </Container>
-  //   </header>
-    <header id="header" className="header d-flex align-items-center sticky-top">
-    <div className="container-fluid container-xl d-flex align-items-center justify-content-between">
-
-      <a href="https://voitix.azacloud.com/en/" className="logo d-flex align-items-center">
-         <img src={voitixLogo} alt="Voitix" />
-
-       </a>
-
-      <i className="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
-      <i className="mobile-nav-toggle mobile-nav-hide d-none  bi bi-x-circle"></i>
-      <nav id="navbar" className="navbar">
-        <ul>
-          <li><a href="./#" className="active">Home</a></li>
-          <li><a href="./#about">Features</a></li>
-          <li><a href="./#faq">FAQS</a></li>
-          <li><a href="./#pricing">Pricing</a></li>
-          <li><a href="./#pricing">Acounting</a></li>
-           <li className="dropdown"><a href="#support"><span>Learn & Help</span> <i className="bi bi-chevron-down dropdown-indicator"></i></a>
-            <ul>
-            <li><a href="#blogs">Blogs</a></li>
-             <li><a  target="_blank" href="#documentation">Documentation</a></li>
-            </ul>
-          </li>
-          <li><a className=" sign-in-btn" href="https://voitix.azacloud.com/login">Sign In / Sign Up</a></li>
-        </ul>
-      </nav> 
-
-    </div>
-  </header> 
+    <header id="header" className="header fixed-top d-flex align-items-center">
+      <Container fluid className="container-xl d-flex align-items-center justify-content-between">
+        <Navbar expand="lg" className="w-100">
+          <Navbar.Brand href="https://voitix.azacloud.com/en/" className="d-flex align-items-center">
+            <img width={100} src={voitixLogo} alt="Voitix" />
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" className="mobile-nav-toggle" onClick={toggleNav}>
+            <i className={`bi ${isNavOpen ? 'bi-x-circle' : 'bi-list'}`}></i>
+          </Navbar.Toggle>
+          <Navbar.Collapse id="basic-navbar-nav" className={isNavOpen ? 'show' : ''}>
+            <Nav className="ml-auto">
+              <Nav.Link
+                href="./#"
+                className={activeItem === 'Home' ? 'active' : ''}
+                onClick={() => handleItemClick('Home')}
+              >
+                Home
+              </Nav.Link>
+              <Nav.Link
+                href="./#about"
+                className={activeItem === 'Features' ? 'active' : ''}
+                onClick={() => handleItemClick('Features')}
+              >
+                Features
+              </Nav.Link>
+              <Nav.Link
+                href="./#faq"
+                className={activeItem === 'FAQs' ? 'active' : ''}
+                onClick={() => handleItemClick('FAQs')}
+              >
+                FAQs
+              </Nav.Link>
+              <Nav.Link
+                href="./#pricing"
+                className={activeItem === 'Pricing' ? 'active' : ''}
+                onClick={() => handleItemClick('Pricing')}
+              >
+                Pricing
+              </Nav.Link>
+              <Nav.Link
+                href="./#accounting"
+                className={activeItem === 'Accounting' ? 'active' : ''}
+                onClick={() => handleItemClick('Accounting')}
+              >
+                Accounting
+              </Nav.Link>
+              <NavDropdown
+                title={
+                  <>
+                    Learn & Help <i className="bi bi-chevron-down"></i>
+                  </>
+                }
+                id="support-dropdown"
+                className="dropdown"
+              >
+                <NavDropdown.Item
+                  href="#blogs"
+                  className={activeItem === 'Blogs' ? 'active' : ''}
+                  onClick={() => handleItemClick('Blogs')}
+                >
+                  Blogs
+                </NavDropdown.Item>
+                <NavDropdown.Item
+                  href="#documentation"
+                  className={activeItem === 'Documentation' ? 'active' : ''}
+                  onClick={() => handleItemClick('Documentation')}
+                >
+                  Documentation
+                </NavDropdown.Item>
+              </NavDropdown>
+              <Button className="sign-in-btn" href="https://voitix.azacloud.com/login">Sign In / Sign Up</Button> 
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
+      </Container>
+    </header>
   );
 };
 
