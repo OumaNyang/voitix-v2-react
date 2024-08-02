@@ -40,7 +40,7 @@ const Footer = () => {
               <a target="_blank" rel="noopener noreferrer" href="https://x.com/" className="twitter"><i className="bi bi-twitter-x"></i></a>
               <a target="_blank" rel="noopener noreferrer" href="https://linkedin.com/" className="linkedin"><i className="bi bi-linkedin"></i></a>
               <a target="_blank" rel="noopener noreferrer" href="https://youtube.com/" className="youtube"><i className="bi bi-youtube"></i></a>
-              <a target="_blank" rel="noopener noreferrer" href="https://wa.me/+254791692432?text=Hello%am%from%the%website.%I%need%Voitix%from%support" className="whatsapp"><i className="bi bi-whatsapp"></i></a>
+              <a target="_blank" rel="noopener noreferrer" href="https://wa.me/+254791692432?text=Hello%20from%20the%20website.%20I%20need%20Voitix%20support" className="whatsapp"><i className="bi bi-whatsapp"></i></a>
             </div>
           </Col>
         </Row>

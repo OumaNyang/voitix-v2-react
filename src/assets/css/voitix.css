@@ -122,8 +122,8 @@ h6 {
 /*--------------------------------------------------------------
 # Preloader
 --------------------------------------------------------------*/
- 
-#preloader   {
+
+#preloader {
   position: fixed;
   top: 0;
   left: 0;
@@ -137,7 +137,7 @@ h6 {
   z-index: 9999;
 }
 
- .preloader-content {
+.preloader-content {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -145,9 +145,9 @@ h6 {
   border-radius: 50%;
   background-color: #f3cccc;
 }
- 
- .preloader-dots {
-  position: relative;  
+
+.preloader-dots {
+  position: relative;
   width: 100px;
   height: 100px;
   display: flex;
@@ -159,26 +159,29 @@ h6 {
 /* Dots */
 .dot {
   position: absolute;
-  width: 15px; 
-  height: 15px;  
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
-  background-color: var(--color-accent); 
+  background-color: var(--color-accent);
 }
 
- 
- @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
- .preloader-dots {
+.preloader-dots {
   animation: spin 1.5s linear infinite;
 }
 
 .preloader-image {
-  position: absolute;  
-  width: 50px;  
-  height: 50px; 
+  position: absolute;
+  width: 50px;
+  height: 50px;
   z-index: 1;
   border-radius: 50%;
   background-color: #ffffff;
@@ -531,7 +534,6 @@ h6 {
   }
 }   */
 
-
 .header {
   width: 100%;
   background: #fff;
@@ -604,10 +606,10 @@ h6 {
 }
 
 .header .navbar-nav .nav-item.dropdown > a::after {
-  content: '\f078';  
-  font-family: 'Font Awesome 5 Free';
-   display:none;
- }
+  content: "\f078";
+  font-family: "Font Awesome 5 Free";
+  display: none;
+}
 
 .header .navbar-nav .dropdown-menu a {
   color: #333;
@@ -728,8 +730,8 @@ h6 {
     right: 0;
   }
 }
- 
- /*--------------------------------------------------------------
+
+/*--------------------------------------------------------------
 # Breadcrumb Section
 --------------------------------------------------------------*/
 
@@ -747,16 +749,16 @@ h6 {
 
 /* Linear gradient lines */
 .breadcrumbsection::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background: linear-gradient(135deg, rgb(255, 255, 255) 25%, transparent 25%),
-              linear-gradient(225deg, rgba(236, 164, 164, 0.902) 25%, transparent 25%),
-              linear-gradient(45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%),
-              linear-gradient(315deg, rgba(255, 203, 119, 0.968) 25%, transparent 25%);
+    linear-gradient(225deg, rgba(236, 164, 164, 0.902) 25%, transparent 25%),
+    linear-gradient(45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%),
+    linear-gradient(315deg, rgba(255, 203, 119, 0.968) 25%, transparent 25%);
   background-size: 50px 50px;
   z-index: 1;
   pointer-events: none;
@@ -789,7 +791,7 @@ h6 {
 
 .breadcrumbsection .decorative-shapes::before,
 .breadcrumbsection .decorative-shapes::after {
-  content: '';
+  content: "";
   position: absolute;
   background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent);
   border-radius: 50%;
@@ -810,7 +812,6 @@ h6 {
   top: 60%;
   left: 70%;
 }
-
 
 /*--------------------------------------------------------------
 # Sections & Section Header
@@ -1396,9 +1397,9 @@ Features Section
   padding-bottom: 12px;
 }
 
- .footer .footer-links {
+.footer .footer-links {
   margin-bottom: 30px;
-} 
+}
 
 .footer .footer-links ul {
   list-style: none;
@@ -1447,17 +1448,14 @@ Features Section
   color: #fff;
 }
 
-
 /*--------------------------------------------------------------
 #  Documentation Section Styles 
 --------------------------------------------------------------*/
 
-
- .documentation {
+.documentation {
   padding: 40px 0;
 }
 
- 
 /* Card Styles */
 .documentation .card-body {
   display: flex;
@@ -1488,11 +1486,10 @@ Features Section
   margin-bottom: 0;
 }
 
- 
 /*--------------------------------------------------------------
 #  PageNotFound
 --------------------------------------------------------------*/
- 
+
 .page-not-found {
   background-color: #f8f9fa;
   padding: 60px 0;
@@ -1531,58 +1528,52 @@ Features Section
   height: auto;
   margin-bottom: 20px;
 }
- 
+
 /*--------------------------------------------------------------
 # Articles and News
 --------------------------------------------------------------*/
- .articles{
-padding-top: 80px;
-font-family: var(--font-primary);
+.articles {
+  padding-top: 80px;
+  font-family: var(--font-primary);
 }
- .articles .card {
+.articles .card {
   border: none;
-    overflow: hidden;
+  overflow: hidden;
   transition: transform 0.3s ease;
   background-color: inherit;
 }
 .articles .large-article {
   font-size: 1.2rem;
   height: 90%;
-  }
- .articles .large-article .article-body {
+}
+.articles .large-article .article-body {
   height: 10% !important;
-   }
- 
+}
+
 .articles .card-img-top {
   height: 280px;
   object-fit: cover;
- }
+}
 
-.articles .card-title   {
+.articles .card-title {
   font-size: 1rem;
   font-weight: 600;
   margin-bottom: 15px;
-  color: var(--color-accent) ;
-
+  color: var(--color-accent);
 }
-.articles .card-title a:{
-  color: var(--color-primary) ;
-
-} 
+.articles .card-title a:hover {
+  color: var(--color-primary);
+}
 .articles .card-text {
   font-size: 14px;
-   /* margin-bottom: 20px; */
+  /* margin-bottom: 20px; */
   /* height: 60px;   */
   /* overflow: hidden;
   text-overflow: ellipsis; */
   /* white-space: nowrap; */
 }
-/*  
-.articles .small-cards {
-border: 6px solid red;
-}
-  */
-.articles .small-cards img{
+ 
+.articles .small-cards img {
   height: 150px;
 }
 .articles .card-footer {
@@ -1592,21 +1583,21 @@ border: 6px solid red;
   padding: 1px;
 }
 
- .articles .sidebar {
+.articles .sidebar {
   position: sticky;
   top: 0;
-    background-color: inherit;
+  background-color: inherit;
   border-radius: 10px;
- }
+}
 
-.articles  h3 {
+.articles h3 {
   font-size: 22px;
   font-weight: 600;
   margin-bottom: 20px;
-  color: var(--color-primary);  
+  color: var(--color-primary);
   padding-bottom: 10px;
   border-bottom: 2px solid var(--color-primary);
- }
+}
 
 .articles .sidebar ul {
   padding-left: 0;
@@ -1614,29 +1605,27 @@ border: 6px solid red;
 }
 
 .articles .sidebar ul li {
-   padding: 0px 3px;
+  padding: 0px 3px;
   border-bottom: 1px solid #ccc;
- }
+}
 
 .articles .sidebar ul li a {
   color: var(--color-default);
   text-decoration: none;
-  font-size: .9em;
+  font-size: 0.9em;
   font-weight: 700;
 }
-.articles  .author{
-  font-size: .8em;
+.articles .author {
+  font-size: 0.8em;
   color: #555;
-  }
+}
 
-.articles  .author span{
+.articles .author span {
   float: inline-end;
 }
 .articles .sidebar ul li a:hover {
-  color: var(--color-primary);  
+  color: var(--color-primary);
 }
-
- 
 
 /*
 .articles .card {
@@ -1673,7 +1662,41 @@ const Header = () => {
     font-size: 15px;
   }
 } */
- 
 
- 
+/*--------------------------------------------------------------
+# Accounting and Payroll
+--------------------------------------------------------------*/
+.accounting {
+  padding: 60px 0;
+  background-color: #f7f7f7;
+  font-family: var(--font-default);
+}
+
+
+ .accounting ul {
+  list-style-type: square;
+  padding: 0;
+}
+
+.accounting li {
+  margin-bottom: 20px;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.accounting li strong {
+  color: var(--color-primary);
+}
+
+ .accounting p {
+  font-size: 16px;
+  color: var(--color-secondary);
+  margin-bottom: 20px;
+}
+
+.accounting h3{
+  color:var(--color-default);
+  font-weight: 600;
+  font-family: var(--font-primary);
+}
  
