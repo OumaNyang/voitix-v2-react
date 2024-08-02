@@ -1396,9 +1396,9 @@ Features Section
   padding-bottom: 12px;
 }
 
-.footer .footer-links {
+ .footer .footer-links {
   margin-bottom: 30px;
-}
+} 
 
 .footer .footer-links ul {
   list-style: none;
@@ -1448,62 +1448,51 @@ Features Section
 }
 
 
+/*--------------------------------------------------------------
+#  Documentation Section Styles 
+--------------------------------------------------------------*/
 
 
-/* Documentation Section Styles */
-.documentation {
+ .documentation {
   padding: 40px 0;
 }
 
-.section-header {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.section-header h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-}
-
-.section-header p {
-  font-size: 1.1rem;
-  color: #666;
-}
-
+ 
 /* Card Styles */
-.card-body {
+.documentation .card-body {
   display: flex;
   align-items: center;
 }
 
-.card-body .text-primary {
+.documentation .documentation .documentation .card-body .text-primary {
   color: #007bff;
 }
 
-.card-body .text-secondary {
+.documentation .card-body .text-secondary {
   color: #6c757d;
 }
 
-.card-body .text-success {
+.documentation .card-body .text-success {
   color: #28a745;
 }
 
-.card-body .text-info {
+.documentation .card-body .text-info {
   color: #17a2b8;
 }
 
-.card-body h4 {
+.documentation .card-body h4 {
   margin-bottom: 10px;
 }
 
-.card-body p {
+.documentation .card-body p {
   margin-bottom: 0;
 }
 
-/* PageNotFound */
-
-/* PageNotFound.css */
-
+ 
+/*--------------------------------------------------------------
+#  PageNotFound
+--------------------------------------------------------------*/
+ 
 .page-not-found {
   background-color: #f8f9fa;
   padding: 60px 0;
@@ -1542,3 +1531,149 @@ Features Section
   height: auto;
   margin-bottom: 20px;
 }
+ 
+/*--------------------------------------------------------------
+# Articles and News
+--------------------------------------------------------------*/
+ .articles{
+padding-top: 80px;
+font-family: var(--font-primary);
+}
+ .articles .card {
+  border: none;
+    overflow: hidden;
+  transition: transform 0.3s ease;
+  background-color: inherit;
+}
+.articles .large-article {
+  font-size: 1.2rem;
+  height: 90%;
+  }
+ .articles .large-article .article-body {
+  height: 10% !important;
+   }
+ 
+.articles .card-img-top {
+  height: 280px;
+  object-fit: cover;
+ }
+
+.articles .card-title   {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: var(--color-accent) ;
+
+}
+.articles .card-title a:{
+  color: var(--color-primary) ;
+
+} 
+.articles .card-text {
+  font-size: 14px;
+   /* margin-bottom: 20px; */
+  /* height: 60px;   */
+  /* overflow: hidden;
+  text-overflow: ellipsis; */
+  /* white-space: nowrap; */
+}
+/*  
+.articles .small-cards {
+border: 6px solid red;
+}
+  */
+.articles .small-cards img{
+  height: 150px;
+}
+.articles .card-footer {
+  background-color: inherit;
+  border-top: none;
+  margin-top: 0px;
+  padding: 1px;
+}
+
+ .articles .sidebar {
+  position: sticky;
+  top: 0;
+    background-color: inherit;
+  border-radius: 10px;
+ }
+
+.articles  h3 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: var(--color-primary);  
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--color-primary);
+ }
+
+.articles .sidebar ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.articles .sidebar ul li {
+   padding: 0px 3px;
+  border-bottom: 1px solid #ccc;
+ }
+
+.articles .sidebar ul li a {
+  color: var(--color-default);
+  text-decoration: none;
+  font-size: .9em;
+  font-weight: 700;
+}
+.articles  .author{
+  font-size: .8em;
+  color: #555;
+  }
+
+.articles  .author span{
+  float: inline-end;
+}
+.articles .sidebar ul li a:hover {
+  color: var(--color-primary);  
+}
+
+ 
+
+/*
+.articles .card {
+  display
+: flex;
+flex-direction: column;
+}
+ @media (max-width: 768px) {
+  .section-header h2 {
+    font-size: 28px;
+  }
+
+  .section-header p {
+    font-size: 14px;
+  }
+
+  .articles .card-img-top {
+    height: 150px;
+  }
+
+  .articles .card-title {
+    font-size: 18px;
+  }
+.png";
+
+const Header = () => {
+  }
+
+  .sidebar h3 {
+    font-size: 20px;
+  }
+
+  .sidebar ul li a {
+    font-size: 15px;
+  }
+} */
+ 
+
+ 
+ 

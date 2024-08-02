@@ -16,7 +16,6 @@ const PageNotFound = () => {
                 <h2>Page Not Found</h2>
               </div> */}
               <img src={notFoundImage} alt="Disconnection" className="disconnection-image" />
-
               <h5>Oops! This Page Could Not Be Found</h5>
                 <p>The page you are looking for might have been moved or deleted.</p>
                 <Button variant="primary" onClick={() => navigate('/')}>

@@ -51,7 +51,7 @@ import './assets/css/voitix.css';
 import PricingPage from "./pages/PricingPage";
 import AccountingPage from "./pages/AccountingPage";
 import DocumentationPage from "./pages/DocumentationPage";
-import BlogsPage from "./pages/BlogsPage";
+import BlogsPage from "./pages/ArticlesPage";
 import PageNotFound from "./pages/PageNotFound";
 
 function App() {
