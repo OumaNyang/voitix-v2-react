@@ -1,3 +1,13 @@
 # https://www.robotstxt.org/robotstxt.html
+
 User-agent: *
-Disallow:
+Disallow: /admin/
+Disallow: /private/
+Disallow: /settings/
+Disallow: /user/
+
+# Allow crawling of all other content
+Allow: /
+
+# Specific Sitemap directive
+Sitemap: https://voitix.azacloud.com/sitemap.xml

@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/voitix-v2-react/static/css/main.f9c58806.css",
-    "main.js": "/voitix-v2-react/static/js/main.b3a4519a.js",
-    "static/js/453.0962fdb4.chunk.js": "/voitix-v2-react/static/js/453.0962fdb4.chunk.js",
+    "main.css": "/voitix-v2-react/static/css/main.c90da57d.css",
+    "main.js": "/voitix-v2-react/static/js/main.302a664e.js",
+    "static/js/206.17ecf36b.chunk.js": "/voitix-v2-react/static/js/206.17ecf36b.chunk.js",
     "static/media/istock-1371324023-2520w.jpg": "/voitix-v2-react/static/media/istock-1371324023-2520w.10622a16f7abfd28bbe1.jpg",
     "static/media/Blog_Fourth-Image-RFQ.png": "/voitix-v2-react/static/media/Blog_Fourth-Image-RFQ.8b796b1bf03ccec39afb.png",
     "static/media/bootstrap-icons.woff?": "/voitix-v2-react/static/media/bootstrap-icons.39795c0b4513de014cf8.woff",
@@ -15,18 +15,17 @@
     "static/media/card_decals.png": "/voitix-v2-react/static/media/card_decals.742313424e32260a48f2.png",
     "service-worker.js": "/voitix-v2-react/service-worker.js",
     "static/media/android-chrome-192x192.png": "/voitix-v2-react/static/media/android-chrome-192x192.2c55420e57a089510ede.png",
+    "static/media/payroll.png": "/voitix-v2-react/static/media/payroll.389f778bf5e3d0e335db.png",
     "static/media/invoice-1.png": "/voitix-v2-react/static/media/invoice-1.507e28fa5fdd81b914fc.png",
     "static/media/Metropolis-Regular.otf": "/voitix-v2-react/static/media/Metropolis-Regular.67a1988d7b65b0aaa16d.otf",
     "static/media/delivery--v1.png": "/voitix-v2-react/static/media/delivery--v1.97b32eac5bc05828fb51.png",
     "static/media/purchase-img-icon.png": "/voitix-v2-react/static/media/purchase-img-icon.3f4b06d1289f2ceb7f1e.png",
+    "static/media/accounting.png": "/voitix-v2-react/static/media/accounting.4a43d4598a81d69b60a6.png",
     "static/media/invoice.png": "/voitix-v2-react/static/media/invoice.6bf204c8b38a98c009fb.png",
-    "index.html": "/voitix-v2-react/index.html",
-    "main.f9c58806.css.map": "/voitix-v2-react/static/css/main.f9c58806.css.map",
-    "main.b3a4519a.js.map": "/voitix-v2-react/static/js/main.b3a4519a.js.map",
-    "453.0962fdb4.chunk.js.map": "/voitix-v2-react/static/js/453.0962fdb4.chunk.js.map"
+    "index.html": "/voitix-v2-react/index.html"
   },
   "entrypoints": [
-    "static/css/main.f9c58806.css",
-    "static/js/main.b3a4519a.js"
+    "static/css/main.c90da57d.css",
+    "static/js/main.302a664e.js"
   ]
 }
