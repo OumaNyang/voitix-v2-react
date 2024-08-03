@@ -85,43 +85,46 @@ const Header = () => {
     setIsDropdownOpen(false);
   };
 
-  return (
-    <header id="header" className={`header fixed-top d-flex align-items-center ${isNavOpen ? 'mobile-nav-active' : ''}`}>
-      <Container fluid className="container-xl d-flex align-items-center justify-content-between">
-        <Navbar expand="lg" className="w-100">
-          <Navbar.Brand as={Link} to="/" className="d-flex align-items-center">
-            <img width={100} src={voitixLogo} alt="Voitix" />
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" className="mobile-nav-toggle" onClick={toggleNav}>
-            <i className={`bi ${isNavOpen ? 'bi-x-circle' : 'bi-list'}`}></i>
-          </Navbar.Toggle>
-          <Navbar.Collapse id="basic-navbar-nav" className={isNavOpen ? 'show' : ''}>
-            <Nav className="ml-auto">
-              <Link className="nav-link" to="/" onClick={handleItemClick}>Home</Link>
-              <Link className="nav-link" to="./#why-voitix" onClick={handleItemClick}>Features</Link>
-              <Link className="nav-link" to="/faq" onClick={handleItemClick}>FAQs</Link>
-              <Link className="nav-link" to="/pricing" onClick={handleItemClick}>Pricing</Link>
-              <Link className="nav-link" to="/accounting" onClick={handleItemClick}>Accounting</Link>
-              <NavDropdown
-                title={
-                  <>
-                    Learn & Help &nbsp; <i className="bi bi-chevron-down"></i>
-                  </>
-                }
-                id="support-dropdown"
-                className={`dropdown ${isDropdownOpen ? 'show' : ''}`}
-                onClick={toggleDropdown}
-              >
-                <Link className="dropdown-item" to="/blogs" onClick={handleItemClick}>Blogs</Link>
-                <Link className="dropdown-item" to="/documentation" onClick={handleItemClick}>Documentation</Link>
-              </NavDropdown>
-              <Link className="sign-in-btn" to="/login">Sign In / Sign Up</Link>
-            </Nav>
-          </Navbar.Collapse>
-        </Navbar>
-      </Container>
-    </header>
-  );
+return (
+<header id="header" className={`header fixed-top d-flex align-items-center ${isNavOpen ? 'mobile-nav-active' : ''}`}>
+<Container fluid className="container-xl d-flex align-items-center justify-content-between">
+<Navbar expand="lg" className="w-100">
+  <Navbar.Brand as={Link} to="/" className="d-flex align-items-center">
+    <img width={100} src={voitixLogo} alt="Voitix" />
+  </Navbar.Brand>
+  <Navbar.Toggle aria-controls="basic-navbar-nav" className="mobile-nav-toggle" onClick={toggleNav}>
+    <i className={`bi ${isNavOpen ? 'bi-x-circle' : 'bi-list'}`}></i>
+  </Navbar.Toggle>
+  <Navbar.Collapse id="basic-navbar-nav" className={isNavOpen ? 'show' : ''}>
+    <Nav className="ml-auto">
+      <Link className="nav-link" to="./" onClick={handleItemClick}>Home</Link>
+      <Link className="nav-link" to="./#why-voitix" onClick={handleItemClick}>Features</Link>
+      <Link className="nav-link" to="./faq" onClick={handleItemClick}>FAQs</Link>
+      <Link className="nav-link" to="./pricing" onClick={handleItemClick}>Pricing</Link>
+      <Link className="nav-link" to="./accounting" onClick={handleItemClick}>Accounting</Link>
+      <NavDropdown
+        title={
+          <>
+            Learn & Help &nbsp; <i className="bi bi-chevron-down"></i>
+          </>
+        }
+        id="support-dropdown"
+        className={`dropdown ${isDropdownOpen ? 'show' : ''}`}
+        onClick={toggleDropdown}
+      >
+        <Link className="dropdown-item" to="/blogs" onClick={handleItemClick}>Blogs</Link>
+  <Link className="dropdown-item" to="/documentation" onClick={handleItemClick}>Documentation</Link>
+   
+      </NavDropdown>
+     <Link className="nav-link" to="/projects" onClick={handleItemClick}>Projects</Link>
+
+      <Link className="nav-link sign-in-btn" to="/login">Sign In / Sign Up</Link>
+    </Nav>
+  </Navbar.Collapse>
+</Navbar>
+</Container>
+</header>
+);
 };
 
 export default Header;

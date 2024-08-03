@@ -623,21 +623,21 @@ h6 {
 
 .header .sign-in-btn {
   background: var(--color-primary);
-  padding: 8px 20px;
+  padding: auto 15px !important;
   margin-left: 10px;
   border-radius: 50px;
-  color: var(--color-white);
+  color: var(--color-white) !important;
   text-align: center;
   display: inline-block;
   font-weight: bold;
-  border: 2px solid var(--color-primary);
+  border: 1px solid var(--color-primary);
   transition: background 0.3s ease, color 0.3s ease, border 0.3s ease;
 }
 
 .header .sign-in-btn:hover,
 .header .sign-in-btn:focus {
   background: var(--color-white);
-  color: var(--color-primary);
+  color: var(--color-primary) !important;
   border-color: var(--color-primary);
 }
 
@@ -683,7 +683,7 @@ h6 {
 
   .navbar .sign-in-btn {
     background: transparent;
-    padding: 8px 20px;
+    /* padding: 8px 20px; */
     border-radius: 5px;
     margin: 15px;
     color: var(--color-primary);
