@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/voitix-v2-react/static/css/main.c90da57d.css",
-    "main.js": "/voitix-v2-react/static/js/main.302a664e.js",
+    "main.css": "/voitix-v2-react/static/css/main.c49a3057.css",
+    "main.js": "/voitix-v2-react/static/js/main.c4d9cb26.js",
     "static/js/206.17ecf36b.chunk.js": "/voitix-v2-react/static/js/206.17ecf36b.chunk.js",
     "static/media/istock-1371324023-2520w.jpg": "/voitix-v2-react/static/media/istock-1371324023-2520w.10622a16f7abfd28bbe1.jpg",
     "static/media/Blog_Fourth-Image-RFQ.png": "/voitix-v2-react/static/media/Blog_Fourth-Image-RFQ.8b796b1bf03ccec39afb.png",
@@ -25,7 +25,7 @@
     "index.html": "/voitix-v2-react/index.html"
   },
   "entrypoints": [
-    "static/css/main.c90da57d.css",
-    "static/js/main.302a664e.js"
+    "static/css/main.c49a3057.css",
+    "static/js/main.c4d9cb26.js"
   ]
 }
