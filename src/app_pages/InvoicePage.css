@@ -1,0 +1,129 @@
+/* InvoicePage.css */
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap'); */
+@font-face {
+  font-family: "Metropolis";
+  src: url("../assets/css/fonts/Metropolis/Metropolis-Regular.otf")
+    format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  } 
+
+section{
+    background: #fce6d5;
+}
+
+
+.invoice-page {
+    
+  /* padding: 10px; */
+  font-size: 0.8em;
+  font-family: "Metropolis", sans-serif;
+  background: #ffffff;
+  box-shadow:    0 3px 4px 0 rgba(0, 0, 0, 0.1);
+ 
+ }
+
+.invoice-page input,
+.invoice-page textarea,
+.invoice-page select {
+  /* border:1px solid rgb(209, 209, 209); */
+  background-color: #f7e7d4;
+  box-shadow: none !important ;
+  box-sizing: none !important;
+  border:1px solid  #efeeee !important;
+} 
+
+.invoice-page select:focus,
+.invoice-page textarea:focus,
+.invoice-page input:focus
+  {
+  box-shadow: none !important ;
+  box-sizing: none !important;
+  border:1px solid  #efeeee !important;
+
+}
+
+.invoice-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 5px;
+  border-bottom: 1px solid #ccc;
+  padding: 8px;
+ }
+
+.logo-upload label {
+  cursor: pointer;
+  display: block;
+  max-width: 100%;
+  padding: 40px;
+  border: 2px dashed #ccc;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.business-details,
+.invoice-number {
+  margin-top: 10px;
+}
+
+.invoice-info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.line-items table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+
+}
+tbody .itemRow{
+    border: 2px solid #f4f4f4 !important;
+
+}
+
+.line-items th,
+.line-items td {
+  border: none!important;
+  padding: 5px;
+  text-align: left;
+  border-radius: 2px;
+  border: none;
+  /* border: 2px solid #fe7171 !important; */
+
+}
+
+.line-items th {
+  background-color: #f4f4f4;
+  font-size: .9em;
+  font-weight: 700;
+}
+.summaryRow {
+    border: 2px solid #069404;
+   text-align: end;
+   justify-items: end;
+   font-size: .9rem;
+   font-weight: 700;
+}
+ 
+.icon-btn {
+    background-color: transparent; 
+    border: none;  
+    border-radius: 50%; 
+    padding: 8px; 
+    display: inline-flex; 
+    justify-content: center;  
+    align-items: center;  
+    cursor: pointer;  
+    width: .9rem;  
+    height: .9rem;  
+    font-size: 1.1rem; 
+  }
+  
+button:focus,button:active{
+box-shadow: none;
+box-sizing: none;
+}
+ 

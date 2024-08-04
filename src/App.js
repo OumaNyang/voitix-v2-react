@@ -53,7 +53,8 @@ import AccountingPage from "./pages/AccountingPage";
 import DocumentationPage from "./pages/DocumentationPage";
 import BlogsPage from "./pages/ArticlesPage";
 import PageNotFound from "./pages/PageNotFound";
-import ProjectsPage from "./app_pages/ProjectsPage";
+// import ProjectsPage from "./app_pages/ProjectsPage";
+import CreateInvoicePage from "./app_pages/ProjectsPage";
 
 function App() {
   useEffect(() => {
@@ -76,7 +77,7 @@ function App() {
         <Route path="/documentation" element={<DocumentationPage />} />
         <Route path="/blogs" element={<BlogsPage />} />
         <Route path="/login" element={<BlogsPage />} />
-        <Route path="/projects" element={<ProjectsPage />} />
+        <Route path="/projects" element={<CreateInvoicePage />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>
