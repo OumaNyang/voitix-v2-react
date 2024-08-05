@@ -2,24 +2,44 @@ import React, { useState } from "react";
 import jsPDF from "jspdf";
 import "./InvoicePage.css";
 import { Container } from "react-bootstrap";
-// import  {font} from  "../assets/css/fonts/Metropolis/Metropolis-Regular-normal.js";
-import  {font} from  "../assets/css/fonts/Roboto/Roboto-Regular-normal.js";
+import { fontRobotoNormal } from "../assets/css/fonts/Roboto/Roboto-Regular-normal.js";
 
 const CreateInvoicePage = () => {
   const [items, setItems] = useState([
     { itemserial: "", description: "", brandmodel: "", quantity: 1.0, uom: "", price: 0.00 }
   ]);
+
   const [netTotal, setNetTotal] = useState(0);
   const [subTotal, setSubTotal] = useState(0);
-  const [currency, setCurrency] = useState("KES");
-  const [createDocument, setCreateDocument] = useState("INVOICE");
   const [logo, setLogo] = useState(null);
   const [taxRate, setTaxRate] = useState(16);
-  const [taxName, setTaxName] = useState("Value Added Tax [VAT]");
   const [taxAmount, setTaxAmount] = useState(0);
   const [taxStatus, setTaxStatus] = useState("AddTax");
-  const [validity, setValidity] = useState(30);
 
+  const [formData, setFormData] = useState({
+    createDocument: "INVOICE",
+    taxAmount: 0,
+    validity: 30,
+    businessName: "",
+    businessAddress: "",
+    taxName: "Value Added Tax [VAT]",
+    currency: "KES",
+    customerName: "",
+    customerAddress: "",
+    deliveryAddress: "",
+    invoiceDate: "",
+    dueDate: "",
+    purchaseOrderNumber: "",
+  });
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+ 
   const handleItemChange = (index, event) => {
     const { name, value } = event.target;
     const newItems = [...items];
@@ -42,11 +62,6 @@ const CreateInvoicePage = () => {
     const status = event.target.value;
     setTaxStatus(status);
     calculateTotal(items, taxRate, status);
-  };
-
-  const handleValidityChange = (event) => {
-    setValidity(event.target.value);
-    // Compute Due Date logic here if needed
   };
 
   const calculateTotal = (items, taxRate, taxStatus) => {
@@ -77,14 +92,6 @@ const CreateInvoicePage = () => {
     setNetTotal(netTotal);
   };
 
-  const handleCurrencyChange = (event) => {
-    setCurrency(event.target.value);
-  };
-
-  const handleDocumentChange = (event) => {
-    setCreateDocument(event.target.value);
-  };
-
   const handleLogoUpload = (event) => {
     setLogo(URL.createObjectURL(event.target.files[0]));
   };
@@ -93,10 +100,6 @@ const CreateInvoicePage = () => {
     const rate = parseFloat(event.target.value);
     setTaxRate(rate);
     calculateTotal(items, rate, taxStatus);
-  };
-
-  const handleTaxNameChange = (event) => {
-    setTaxName(event.target.value);
   };
 
   const validateNumberInput = (event) => {
@@ -132,55 +135,148 @@ const CreateInvoicePage = () => {
     target.value = newValue;
   };
 
-
   const generatePDF = () => {
     const doc = new jsPDF();
-  
-    // Load custom font
-    doc.addFileToVFS("Roboto-Regular-normal.ttf", font);
+
+    doc.addFileToVFS("Roboto-Regular-normal.ttf", fontRobotoNormal);
     doc.addFont("Roboto-Regular-normal.ttf", "Roboto", "normal");
+    doc.addFont("Roboto-Regular-normal.ttf", "Roboto", "bold");
     doc.setFont("Roboto");
-  
-    // Add logo
+
     if (logo) {
-      const imgData = logo; // Assuming logo is a data URL
-      doc.addImage(imgData, "JPEG", 5,5,  25, 25); // Adjust size and position as needed
+      const imgData = logo;
+      doc.addImage(imgData, "JPEG", 8, 5, 35, 25);
     }
-  
-    // Add company details
+
+ 
+ 
+    if (logo) {
+      const imgData = logo;
+      doc.addImage(imgData, "JPEG", 8, 5, 35, 25);
+    }
+
+   
+    doc.setFont("Roboto", "bold");
+    doc.setTextColor(0, 0, 0);
     doc.setFontSize(11);
-    doc.setTextColor(0, 0, 0); // Set text color to black
-    doc.text("Company Name", 10, 40);
-    doc.text("Address Line 1", 10, 45);
-    doc.text("Address Line 2", 10, 50);
-    doc.text("City, State, ZIP", 10, 55);
-    doc.text("Phone: 123-456-7890", 10, 60);
-  
-    // Add invoice title and number
+    doc.setTextColor(0, 0, 0);
+
+    
+
     doc.setFontSize(30);
-    doc.setTextColor(255, 0, 0); // Set text color to red for title
-    doc.text(createDocument,  200, 15, { align: 'right' });
+    doc.setTextColor(255, 0, 0);  
+    doc.text(formData.createDocument, 200, 15, { align: 'right' });
+    
     doc.setFontSize(12);
-    doc.setTextColor(0, 0, 0); // Set text color back to black
-    doc.text(`Reference Number: INV-0001`, 200, 20, { align: 'right' });
+    doc.setTextColor(0, 0, 0); 
+    doc.text('Ref Number :'+ formData.purchaseOrderNumber, 200, 24, { align: 'right' });
+    doc.text((formData.createDocument) + ' Date :' + formData.invoiceDate, 200, 31, { align: 'right' });
+    doc.text('Validity: '+ formData.validity, 200, 38, { align: 'right' });
+    doc.text('Due Date :' + formData.dueDate, 200, 45, { align: 'right' });
   
-    // Add customer details
-    doc.text("Customer Name", 10, 80);
-    doc.text("Customer Address Line 1", 10, 85);
-    doc.text("Customer Address Line 2", 10, 90);
-    doc.text("City, State, ZIP", 10, 95);
-    doc.text("Phone: 098-765-4321", 10, 100);
-  
+ 
+
+ 
+
+
+// Set up y-position for the next section
+let yPosition = 55;
+const columnWidth = 60;
+const col1X = 8;
+const col2X = col1X + columnWidth + 5;
+const col3X = col2X + columnWidth + 5;
+const headerHeight = 8;
+const headerTextYOffset = 7;
+
+// Draw gray background for headers and set up column headers
+doc.setFillColor('#fef'); // Gray background color
+
+// Customer Information header
+doc.rect(col1X, yPosition, columnWidth, headerHeight, 'F');
+doc.setFont("Roboto", "bold");
+doc.setFontSize(11);
+doc.setTextColor(0, 0, 0);
+doc.text('CUSTOMER INFORMATION', col1X, yPosition + headerTextYOffset);
+doc.setFillColor('#fef'); // Gray background color
+
+// Contact Person header
+doc.rect(col2X, yPosition, columnWidth, headerHeight, 'F');
+doc.text('CONTACT PERSON', col2X, yPosition + headerTextYOffset);
+
+doc.setFillColor('#fef'); // Gray background color
+
+// Delivery Address header
+doc.rect(col3X, yPosition, columnWidth, headerHeight, 'F');
+doc.text('DELIVERY ADDRESS', col3X, yPosition + headerTextYOffset);
+
+// Set up for details below headers
+yPosition += headerHeight + 3; // Move yPosition below the headers
+const lineHeight = 5; // Adjust line height as needed
+
+doc.setFont("Roboto", "normal");
+doc.setFontSize(9);
+
+// Draw a table structure by using rect for columns
+const drawColumnText = (textLines, xPos, yStart) => {
+  let yOffset = yStart;
+  textLines.forEach((line) => {
+    doc.text(line, xPos, yOffset);
+    yOffset += lineHeight;
+  });
+};
+
+// Customer Information
+const customerNameLines = doc.splitTextToSize(formData.customerName, columnWidth);
+drawColumnText(customerNameLines, col1X, yPosition);
+const customerAddressLines = doc.splitTextToSize(formData.customerAddress, columnWidth);
+drawColumnText(customerAddressLines, col1X, yPosition + customerNameLines.length * lineHeight);
+
+// Contact Person
+const contactPersonLines = doc.splitTextToSize('Paul Pogba General', columnWidth);
+drawColumnText(contactPersonLines, col2X, yPosition);
+const contactPersonContactLines = doc.splitTextToSize('pogba@gmail.com, 0725678908', columnWidth);
+drawColumnText(contactPersonContactLines, col2X, yPosition + contactPersonLines.length * lineHeight);
+
+// Delivery Address
+const deliveryAddressLines = doc.splitTextToSize(formData.deliveryAddress, columnWidth);
+drawColumnText(deliveryAddressLines, col3X, yPosition);
+
+// Move yPosition to the end of the last column
+const maxHeight = Math.max(
+  customerNameLines.length + customerAddressLines.length,
+  contactPersonLines.length + contactPersonContactLines.length,
+  deliveryAddressLines.length
+) * lineHeight;
+yPosition += maxHeight + 10;
+
+// Subject
+doc.setFont("Roboto", "bold");
+doc.setFontSize(11);
+doc.text('SUBJECT', 8, yPosition);
+doc.setFont("Roboto", "normal");
+doc.text(formData.subjectTitle, 8, yPosition + lineHeight);
+
+
+
+
+
+
+
+
+
+
+
+
     // Define table starting coordinates and dimensions
     const tableStartY = 110;
     const tableWidth = 190;
     const colWidths = [10, 40, 50, 20, 20, 20, 30]; // Adjust column widths as needed
     const rowHeight = 10;
-  
+
     // Draw table header with background
     doc.setFillColor(200, 200, 200); // Set a light gray background
     doc.rect(10, tableStartY, tableWidth, rowHeight, 'F'); // Draw filled rectangle
-  
+
     // Add table headers
     const headers = ["Serial", "Description", "Brand/Model", "Qty", "UOM", "Unit Price", "Total"];
     let currentX = 10;
@@ -190,11 +286,11 @@ const CreateInvoicePage = () => {
       doc.text(header, currentX + colWidths[index] / 2, tableStartY + 6, { align: 'center' }); // Center-align header text
       currentX += colWidths[index];
     });
-  
+
     // Draw borders for header row
     doc.setDrawColor(0, 0, 0); // Set border color to black
     doc.rect(10, tableStartY, tableWidth, rowHeight); // Border around header row
-  
+
     // Add items with borders and text wrapping
     let y = tableStartY + rowHeight;
     items.forEach((item, index) => {
@@ -207,7 +303,7 @@ const CreateInvoicePage = () => {
         parseFloat(item.price).toFixed(2),
         (parseFloat(item.price) * item.quantity).toFixed(2)
       ];
-  
+
       let maxLines = 1;
       currentX = 10;
       itemData.forEach((data, colIndex) => {
@@ -218,42 +314,40 @@ const CreateInvoicePage = () => {
         });
         currentX += colWidths[colIndex];
       });
-  
+
       // Draw borders for each row
       const rowLines = maxLines * (rowHeight / 2);
       doc.rect(10, y - rowHeight / 2, tableWidth, rowLines); // Border around item row
-  
+
       y += rowLines;
     });
-  
+
     // Add totals and other information with borders
     const summaryStartY = y + 10;
     const summaryData = [
-      { label: `Subtotal: ${currency}`, value: subTotal.toFixed(2) },
-      ...(taxStatus !== "NoTax" ? [{ label: `${taxName} (${taxRate}%): ${currency}`, value: taxAmount.toFixed(2) }] : []),
-      { label: `Total: ${currency}`, value: netTotal.toFixed(2) },
+      { label: `Subtotal: ${formData.currency}`, value: subTotal.toFixed(2) },
+      ...(taxStatus !== "NoTax" ? [{ label: `${formData.taxName} (${taxRate}%): ${formData.currency}`, value: taxAmount.toFixed(2) }] : []),
+      { label: `Total: ${formData.currency}`, value: netTotal.toFixed(2) },
     ];
-  
+
     summaryData.forEach((summary, index) => {
       doc.text(summary.label, 140, summaryStartY + index * rowHeight, { align: 'right' });
       doc.text(summary.value, 190, summaryStartY + index * rowHeight, { align: 'right' });
-  
-      // Draw borders around summary
+
       doc.line(140, summaryStartY + index * rowHeight - rowHeight / 2, 190, summaryStartY + index * rowHeight - rowHeight / 2); // Horizontal border
       doc.line(140, summaryStartY + (index + 1) * rowHeight - rowHeight / 2, 190, summaryStartY + (index + 1) * rowHeight - rowHeight / 2); // Bottom border
     });
-  
-    // Draw left and right borders for summary
+
     doc.line(140, summaryStartY - rowHeight / 2, 140, summaryStartY + summaryData.length * rowHeight - rowHeight / 2); // Left border
     doc.line(190, summaryStartY - rowHeight / 2, 190, summaryStartY + summaryData.length * rowHeight - rowHeight / 2); // Right border
-  
+
     // Save the PDF
     // const fileName = `${createDocument.toLowerCase().replace(/\s/g, "_")}_${Date.now()}.pdf`;
     // doc.save(fileName);
     // Generate the PDF and open it in a new tab
-  const pdfData = doc.output('blob');
-  const pdfUrl = URL.createObjectURL(pdfData);
-  window.open(pdfUrl);
+    const pdfData = doc.output('blob');
+    const pdfUrl = URL.createObjectURL(pdfData);
+    window.open(pdfUrl);
   };
   return (
     <section>
@@ -266,8 +360,9 @@ const CreateInvoicePage = () => {
                 <label>Document</label>
                 <select
                   className="form-select form-select-sm create-document"
-                  onChange={handleDocumentChange}
-                  value={createDocument}
+                  name="createDocument" // Add the name attribute here
+                  onChange={handleInputChange}
+                  value={formData.createDocument}
                 >
                   <option value="INVOICE">INVOICE</option>
                   <option value="PROFORMA INVOICE">PROFORMA INVOICE</option>
@@ -278,12 +373,12 @@ const CreateInvoicePage = () => {
               </div>
 
               <div className="mt-2">
-
                 <label>Currency</label>
                 <select
                   className="form-select form-select-sm currency-selector"
-                  onChange={handleCurrencyChange}
-                  value={currency}
+                  name="currency"
+                  onChange={handleInputChange}
+                  value={formData.currency}
                 >
                   <option value="KES">KES</option>
                   <option value="USD">USD</option>
@@ -291,6 +386,7 @@ const CreateInvoicePage = () => {
                   <option value="GBP">GBP</option>
                 </select>
               </div>
+
               <div className="mt-2">
                 <label>Tax Name</label>
 
@@ -299,8 +395,8 @@ const CreateInvoicePage = () => {
                   name="taxName"
                   className="form-control form-control-sm"
                   placeholder="Tax Name"
-                  value={taxName}
-                  onChange={handleTaxNameChange}
+                  value={formData.taxName}
+                  onChange={handleInputChange}
                 />
               </div>
 
@@ -326,7 +422,6 @@ const CreateInvoicePage = () => {
                   Create
                 </button>
               </div>
-
             </div>
 
           </div>
@@ -357,12 +452,17 @@ const CreateInvoicePage = () => {
                       name="businessName"
                       className="form-control form-control-sm mb-2"
                       placeholder="Business Name"
+                      value={formData.businessName}
+                      onChange={handleInputChange}
                     />
                     <textarea
                       rows="3"
                       name="businessAddress"
                       className="form-control form-control-sm mb-2"
                       placeholder="Business Address"
+                      value={formData.businessAddress}
+                      onChange={handleInputChange}
+
                     />
                   </div>
                 </div>
@@ -370,7 +470,7 @@ const CreateInvoicePage = () => {
 
                 <div className="col-md-3">
                   <div className="invoice-number">
-                    <h2 className="text-center fw-bold">{createDocument}</h2>
+                    <h2 className="text-center fw-bold">{formData.createDocument}</h2>
                     <input
                       type="text"
                       className="form-control form-control-sm"
@@ -387,12 +487,17 @@ const CreateInvoicePage = () => {
                     name="customerName"
                     className="form-control form-control-sm mb-2"
                     placeholder="Customer Name"
+                    onChange={handleInputChange}
+                    value={formData.customerName}
+
                   />
                   <textarea
                     rows="3"
                     name="customerAddress"
                     className="form-control form-control-sm mb-2"
                     placeholder="Customer Address"
+                    onChange={handleInputChange}
+                    value={formData.customerAddress}
                   />
                 </div>
                 <div className="col-md-4">
@@ -401,6 +506,8 @@ const CreateInvoicePage = () => {
                     name="deliveryAddress"
                     className="form-control form-control-sm mb-2"
                     placeholder="Delivery Address"
+                    onChange={handleInputChange}
+                    value={formData.deliveryAddress}
                   />
                 </div>
 
@@ -413,6 +520,8 @@ const CreateInvoicePage = () => {
                       name="invoiceDate"
                       className="form-control form-control-sm"
                       placeholder="Invoice Date"
+                      value={formData.invoiceDate}
+                      onChange={handleInputChange}
                     />
                   </div>
                   <label>Validity(Days)</label>
@@ -425,8 +534,8 @@ const CreateInvoicePage = () => {
                     type="text"
                     name="validity"
                     placeholder="Select or type "
-                    value={validity}
-                    onChange={(e) => handleValidityChange(e)}
+                    value={formData.validity}
+                    onChange={handleInputChange}
                     onKeyDown={validateNumberInput}
                     onPaste={handlePaste}
                   />
@@ -447,6 +556,9 @@ const CreateInvoicePage = () => {
                       type="date"
                       className="form-control form-control-sm"
                       placeholder="Due Date"
+                      name="dueDate"
+                      value={formData.dueDate}
+                      onChange={handleInputChange}
                     />
                   </div>
 
@@ -457,7 +569,10 @@ const CreateInvoicePage = () => {
                     type="text"
                     name="subjectTitle"
                     className="form-control form-control-sm"
-                    placeholder="Subject /Title " />
+                    placeholder="Subject /Title "
+                    value={formData.subjectTitle}
+                    onChange={handleInputChange}
+                  />
 
                 </div>
                 <div className="col-md-3 mt-1">
@@ -467,8 +582,9 @@ const CreateInvoicePage = () => {
                     type="text"
                     name="purchaseOrderNumber"
                     className="form-control form-control-sm"
-                    placeholder="Purchase Order Number #" />
-
+                    placeholder="Purchase Order Number #"
+                    value={formData.purchaseOrderNumber}
+                    onChange={handleInputChange} />
                 </div>
               </div>
               <hr></hr>
@@ -550,11 +666,6 @@ const CreateInvoicePage = () => {
                               <option value="Metres">Metres</option>
                               <option value="People">People</option>
                             </datalist>
-
-
-
-
-
                           </td>
                           <td>
                             <input
@@ -567,7 +678,7 @@ const CreateInvoicePage = () => {
                               onPaste={handlePaste} />
                           </td>
                           <td>
-                            {currency} {(item.quantity * item.price).toFixed(2)}
+                            {formData.currency} {(item.quantity * item.price).toFixed(2)}
                           </td>
                           <td className="remove-item">
                             <button className="icon-btn"> <i onClick={() => removeItem(index)} className="bi bi-trash-fill text-danger" ></i> </button>
@@ -585,13 +696,13 @@ const CreateInvoicePage = () => {
                       <tr className="summaryRow">
                         <td colSpan="2" />
                         <td colSpan="3" className="text-end" >Sub Total</td>
-                        <td colSpan="3" > {currency} {subTotal.toFixed(2)}</td>
+                        <td colSpan="3" > {formData.currency} {subTotal.toFixed(2)}</td>
                         <td colSpan="1" />
                       </tr>
                       <tr className="summaryRow">
                         <td colSpan="2" />
-                        <td colSpan="3" className="text-end" >{taxName}</td>
-                        <td colSpan="2"> {currency} {taxAmount.toFixed(2)}</td>
+                        <td colSpan="3" className="text-end" >{formData.taxName}</td>
+                        <td colSpan="2"> {formData.currency} {taxAmount.toFixed(2)}</td>
                         <td colSpan="1">
                           <select
                             className="form-select form-select-sm "
@@ -604,10 +715,7 @@ const CreateInvoicePage = () => {
                           </select>
                         </td>
 
-
-
                         <td colSpan="1" >
-
                           <button className="icon-btn "> <i className="bi bi-x-circle  text-danger" > </i> </button>
                         </td>
 
@@ -617,7 +725,7 @@ const CreateInvoicePage = () => {
                         <td colSpan="3" className="text-end" >Net Total</td>
                         <td colSpan="3" >
 
-                          {currency} {netTotal.toFixed(2)} </td>
+                          {formData.currency} {netTotal.toFixed(2)} </td>
                         <td colSpan="1" />
 
                       </tr>

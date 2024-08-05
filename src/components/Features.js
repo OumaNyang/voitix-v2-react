@@ -9,7 +9,7 @@ const Features = () => {
           {/* <span>Features</span> */}
           <h2>Features</h2>
         </div>
-        <Row>
+        <Row>H
           <p>Explore the powerful features that make Voitix the ideal solution for your business needs.</p>
           <Col lg={6} className="content">
             <ul>

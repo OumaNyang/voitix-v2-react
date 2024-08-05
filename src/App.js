@@ -55,7 +55,7 @@ import BlogsPage from "./pages/ArticlesPage";
 import PageNotFound from "./pages/PageNotFound";
 // import ProjectsPage from "./app_pages/ProjectsPage";
 import CreateInvoicePage from "./app_pages/ProjectsPage";
-
+import CreateInvoice from "./app_pages/CreateInvoice.js";
 function App() {
   useEffect(() => {
     AOS.init({
@@ -78,6 +78,8 @@ function App() {
         <Route path="/blogs" element={<BlogsPage />} />
         <Route path="/login" element={<BlogsPage />} />
         <Route path="/projects" element={<CreateInvoicePage />} />
+        <Route path="/app/create-invoice" element={<CreateInvoice />} />
+
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>
